@@ -19,6 +19,7 @@ Airflow (Astronomer Cosmos) · dbt · Google BigQuery · Power BI · Python. Loc
 python exploration/explore_sources.py    # data discovery (offline)
 python ingestion/load_raw.py             # land the sources into BigQuery (git_manual/MANUAL_GCP_INGESTAO.md)
 pytest tests/ -q                         # unit tests
+cd dbt && dbt deps && dbt build --profiles-dir . --select staging   # Bronze models + tests (git_manual/MANUAL_DBT_BRONZE.md)
 ```
 
 ## Deliverables & progress
@@ -26,7 +27,7 @@ pytest tests/ -q                         # unit tests
 |----|-------------|--------|
 | E1 | Architecture diagram | ✅ done (`docs/architecture.md`) |
 | E2 | Airflow DAG (ingest → transform → refresh) | ⬜ next |
-| E3 | dbt models - Bronze / Silver / Gold | 🟡 in progress |
+| E3 | dbt models - Bronze / Silver / Gold | 🟡 in progress (Bronze staging done) |
 | E4 | Load-strategy table | ✅ done (ADR-0008) |
 | E5 | Power BI dashboard (Fraud / Affiliate / Financial) | ⬜ next |
 | R1 | Observability points | ⬜ next |
@@ -39,6 +40,9 @@ Legend: ✅ done · 🟡 in progress · ⬜ next
 - Data discovery across the four sources (`exploration/`).
 - Architecture decided as evidence-based ADRs.
 - Ingestion layer: NDJSON normalization + audit columns + idempotent load into `raw`, unit-tested.
+- Bronze staging (`dbt/`): four `stg_` models (SAFE_CAST on every typed column, fixing `amount` that
+  autodetect typed FLOAT to NUMERIC) with their test suite (unique/not_null, accepted_values,
+  non-negative, no-future, not-null-after-cast) and source freshness. Passing on BigQuery (`dbt build`).
 
 ## Key decisions
 [ADR-0001 Medallion](decisions/0001-medallion-architecture.md) ·
@@ -49,4 +53,5 @@ Legend: ✅ done · 🟡 in progress · ⬜ next
 [0006 data contract & assumptions](decisions/0006-data-contract-and-assumptions.md) ·
 [0007 Gold star schema & physical design](decisions/0007-gold-star-schema-and-physical-design.md) ·
 [0008 load strategy per source](decisions/0008-load-strategy-per-source.md) ·
-[0009 non-functional requirements](decisions/0009-non-functional-requirements.md)
+[0009 non-functional requirements](decisions/0009-non-functional-requirements.md) ·
+[0010 Bronze staging conventions](decisions/0010-bronze-staging-conventions.md)

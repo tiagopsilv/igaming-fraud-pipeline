@@ -5,6 +5,30 @@ Milestones delivered and findings made, newest first. Format inspired by
 
 ## [Unreleased]
 
+### 2026-07-17 - Bronze staging models (dbt) + tests
+**Added**
+- The dbt project (`dbt/`): `dbt_project.yml`, `profiles.yml` (env-driven, no secrets), `packages.yml`.
+- The four Bronze **`stg_` models** (`dbt/models/staging/`): `SAFE_CAST` on every typed column (it fixes
+  `amount`, which BigQuery autodetect had typed as FLOAT, to NUMERIC), rename to target names, audit
+  passthrough, materialized as views (ADR-0010).
+- The **test suite**, written from the staging contract (TDD): `unique`/`not_null` on the keys,
+  `accepted_values` on `transaction_type`/`device`/`country`, singular tests for `amount > 0`, counts
+  `>= 0`, and no future timestamps, plus source freshness and source-level key tests in `_sources.yml`.
+- Built and tested against BigQuery: `dbt build` runs the 4 models and passes all tests (39 checks green).
+
+### 2026-07-17 - Bronze staging conventions
+**Delivered**
+- The Bronze (dbt staging) conventions, locked as **ADR-0010**: `SAFE_CAST` on every typed column,
+  sources + freshness, and the structural test suite (unique/not_null, accepted_values, non-negative,
+  no-future, not-null-after-cast). The boundary with Silver is explicit.
+
+**Discovered (sets the conventions)**
+- `exploration/explore_staging.py` (queries the real raw schema): BigQuery autodetect **typed** the raw
+  columns from their string content and typed **`amount` as FLOAT** - a money field, which must be
+  NUMERIC. Staging `SAFE_CAST`s every typed column to fix this. The structural baseline is clean (0
+  non-positive amounts, 0 negative counts, 0 future dates, 0 duplicate keys, 0 nulls), so the Bronze
+  tests are guards while the business inconsistencies are asserted in Silver.
+
 ### 2026-07-17 - Architecture diagram + source-to-target mapping
 **Added**
 - `docs/architecture.md` - the **E1** architecture diagram (Mermaid C4 / data-flow: sources →

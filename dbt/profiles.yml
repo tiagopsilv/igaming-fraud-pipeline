@@ -1,0 +1,15 @@
+# dbt connection profile. No secrets here: values come from env vars (same names as config.toml),
+# and the key itself stays in the gitignored secrets/ folder. Run dbt from this folder with
+# `--profiles-dir .` (or set DBT_PROFILES_DIR). The raw source dataset is declared in models/staging/_sources.yml.
+igaming:
+  target: dev
+  outputs:
+    dev:
+      type: bigquery
+      method: service-account
+      project: "{{ env_var('OTG_GCP_PROJECT', 'otg-igaming-case') }}"
+      dataset: "{{ env_var('OTG_DBT_DATASET', 'analytics') }}"
+      location: "{{ env_var('OTG_BQ_LOCATION', 'US') }}"
+      keyfile: "{{ env_var('OTG_GCP_KEYFILE', '../secrets/gcp-keyfile.json') }}"
+      threads: 4
+      priority: interactive

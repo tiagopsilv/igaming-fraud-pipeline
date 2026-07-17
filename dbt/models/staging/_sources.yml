@@ -1,0 +1,44 @@
+version: 2
+
+sources:
+  - name: raw
+    database: "{{ env_var('OTG_GCP_PROJECT', 'otg-igaming-case') }}"
+    schema: raw
+    description: >
+      Raw landing zone. Source files loaded 1:1 by ingestion/load_raw.py, with audit columns
+      (_ingested_at, _source_file). Every column lands as STRING (BigQuery autodetect on the
+      NDJSON); the stg_ models cast the typed columns. See ADR-0005 and ADR-0010.
+    # Source freshness measured on the ingestion time (ADR-0009). Default = daily cadence.
+    config:
+      loaded_at_field: _ingested_at
+      freshness:
+        warn_after: {count: 25, period: hour}
+        error_after: {count: 48, period: hour}
+    tables:
+      - name: players
+        columns:
+          - name: player_id
+            tests: [unique, not_null]
+      - name: sessions
+        # High-volume event: tighter freshness (ADR-0009 sessions <= 1h).
+        config:
+          freshness:
+            warn_after: {count: 1, period: hour}
+            error_after: {count: 2, period: hour}
+        columns:
+          - name: session_id
+            tests: [unique, not_null]
+      - name: transactions
+        # Financial event: tighter freshness (ADR-0009 transactions <= 1h).
+        config:
+          freshness:
+            warn_after: {count: 1, period: hour}
+            error_after: {count: 2, period: hour}
+        columns:
+          - name: transaction_id
+            tests: [unique, not_null]
+      - name: affiliate_cpa_ftd
+        description: "Restated aggregate; conflated grain (no primary key, ADR-0006)."
+        columns:
+          - name: affiliate_id
+            tests: [not_null]

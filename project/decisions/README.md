@@ -28,3 +28,4 @@ considered, and the consequences. They follow a lightweight
 | [0007](0007-gold-star-schema-and-physical-design.md) | Gold star schema and physical design (partition/cluster/materialization) | Accepted |
 | [0008](0008-load-strategy-per-source.md) | Load strategy per source (frequency, full/incremental, control field) | Accepted |
 | [0009](0009-non-functional-requirements.md) | Non-functional requirements (freshness, quality, cost, reliability SLOs) | Accepted |
+| [0010](0010-bronze-staging-conventions.md) | Bronze staging conventions (SAFE_CAST, per-source parse, sources + tests, boundary) | Accepted |

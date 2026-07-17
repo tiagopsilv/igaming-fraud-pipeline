@@ -37,8 +37,16 @@ Build the Medallion models against the decisions above.
   **source-to-target mapping** (`docs/source_to_target_mapping.md`).
 
 The architecture is now fully specified (contract, star schema, load strategy, NFRs, diagram, STTM).
-Next is the build: the dbt models, layer by layer.
-- **E3 - dbt models**: Bronze staging → Silver (conform, attribution, data-quality tests) → Gold star schema.
+The build then runs layer by layer, each with its conventions locked first.
+- ✅ **Bronze staging conventions** ([ADR-0010](decisions/0010-bronze-staging-conventions.md)):
+  `SAFE_CAST` on every typed column (autodetect had mistyped `amount` as FLOAT), sources + freshness,
+  and the structural test suite (unique/not_null, accepted_values, non-negative, no-future, not-null-after-cast).
+- 🔵 **E3 - dbt models** (in progress):
+  - ✅ **Bronze staging** (`dbt/models/staging/`): the four `stg_` models (`SAFE_CAST` on every typed
+    column, fixing `amount` that autodetect typed FLOAT to NUMERIC; view materialization) with their test
+    suite (unique/not_null, accepted_values, non-negative, no-future, not-null-after-cast) plus source
+    freshness. Built test-first and passing against BigQuery (`dbt build`, 39 checks green). ADR-0010.
+  - **Silver** (conform, real FTD, attribution, data-quality) → **Gold** star schema.
 - **R2 - Fraud signals** in `fct_fraud_signals`: multi-accounting, AML low-play, affiliate ghost-FTD.
 
 ## ⬜ Phase 3 - Orchestrate, serve & harden

@@ -1,0 +1,24 @@
+name: 'igaming_fraud_pipeline'
+version: '1.0.0'
+config-version: 2
+
+# Connection profile (see profiles.yml in this folder; run with --profiles-dir .)
+profile: 'igaming'
+
+require-dbt-version: [">=1.9.0", "<2.0.0"]
+
+model-paths: ["models"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+target-path: "target"
+clean-targets:
+  - "target"
+  - "dbt_packages"
+
+# Materialization per Medallion layer (ADR-0001): Bronze staging = views.
+models:
+  igaming_fraud_pipeline:
+    staging:
+      +materialized: view

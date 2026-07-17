@@ -1,0 +1,97 @@
+version: 2
+
+# Bronze staging tests (ADR-0010), written from the explore_staging.py contract (TDD).
+# not_null on a typed column IS the "not-null-after-SAFE_CAST" drift catcher: a value that
+# fails the cast becomes NULL, so this test fails and flags the bad batch.
+
+models:
+  - name: stg_players
+    description: "Bronze: players, 1:1 with raw. Renamed + typed (SAFE_CAST). Grain: one player."
+    columns:
+      - name: player_id
+        description: "Natural key. One row per player."
+        tests: [unique, not_null]
+      - name: email
+        description: "Player email, as-is (lowercasing is a Silver concern)."
+        tests: [not_null]
+      - name: city
+        description: "Registration city (STRING)."
+      - name: created_at
+        description: "Registration date (DATE), cast from the raw value. not_null = no cast failure."
+        tests: [not_null]
+
+  - name: stg_sessions
+    description: "Bronze: sessions, 1:1 with raw. Grain: one session."
+    columns:
+      - name: session_id
+        description: "Natural key. One row per session."
+        tests: [unique, not_null]
+      - name: player_id
+        description: "The player this session belongs to (FK to dim_player, enforced in Silver)."
+        tests: [not_null]
+      - name: ip
+        description: "Session IP address (STRING); a fraud signal input in Gold."
+      - name: device
+        description: "Device type; low-cardinality (degenerate dimension)."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['android', 'desktop', 'ios']
+      - name: session_ts
+        description: "Event timestamp (TIMESTAMP, UTC). not_null = no cast failure."
+        tests: [not_null]
+
+  - name: stg_transactions
+    description: "Bronze: transactions, 1:1 with raw. Grain: one transaction."
+    columns:
+      - name: transaction_id
+        description: "Natural key. One row per transaction."
+        tests: [unique, not_null]
+      - name: player_id
+        description: "The player who made the transaction (FK to dim_player, enforced in Silver)."
+        tests: [not_null]
+      - name: transaction_type
+        description: "Kind of money movement (renamed from `type`)."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['deposit', 'withdraw', 'bet']
+      - name: amount
+        description: "Money (NUMERIC). Autodetect had typed it FLOAT; staging fixes it. Positivity via a singular test."
+        tests: [not_null]
+      - name: txn_ts
+        description: "Transaction timestamp (TIMESTAMP, UTC; renamed from `timestamp`)."
+        tests: [not_null]
+
+  - name: stg_affiliate_cpa_ftd
+    description: >
+      Bronze: affiliate CPA/FTD funnel, 1:1 with raw. Conflated grain, so NO primary key
+      (ADR-0006); its grain is resolved in Silver. Counts non-negativity via a singular test.
+    columns:
+      - name: affiliate_id
+        description: "The acquiring affiliate."
+        tests: [not_null]
+      - name: player_id
+        description: "The acquired player (row-level; not a clean key here, see ADR-0006)."
+        tests: [not_null]
+      - name: country
+        description: "Acquisition country (per row; not an affiliate attribute)."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['AR', 'BR', 'CL', 'CO', 'MX']
+      - name: clicks
+        description: "Affiliate-level funnel metric (INT64). Never summed per row (ADR-0006)."
+        tests: [not_null]
+      - name: registrations
+        description: "Affiliate-level funnel metric (INT64). Never summed per row."
+        tests: [not_null]
+      - name: ftd
+        description: "First-time-deposit claim on this row (INT64). The real FTD is derived in Silver."
+        tests: [not_null]
+      - name: cpa_value
+        description: "CPA amount (NUMERIC money). Autodetect gave INTEGER; staging fixes it."
+        tests: [not_null]

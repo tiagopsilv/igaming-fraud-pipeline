@@ -20,6 +20,7 @@ Airflow (Astronomer Cosmos) · dbt · Google BigQuery · Power BI · Python. Loc
 data/            # synthetic source sample (for reproducibility; production lands in GCS)
 config.toml      # public pipeline configuration (env-overridable; no secrets)
 ingestion/       # land the sources into BigQuery - NDJSON + audit columns + idempotent load
+dbt/             # dbt project: Bronze staging models + tests (Silver/Gold next)
 exploration/     # one-time discovery scripts (profiling + architecture analysis)
 docs/            # architecture diagram (E1) + source-to-target mapping (STTM)
 tests/           # unit tests (pytest)
