@@ -1,0 +1,42 @@
+# --- Secrets / credentials (NEVER commit) ---
+secrets/
+*.json.key
+gcp-keyfile.json
+*-keyfile.json
+.env
+.env.*
+application_default_credentials.json
+
+# --- Python ---
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+
+# --- dbt ---
+target/
+dbt_packages/
+logs/
+.user.yml
+
+# --- Airflow / Astro ---
+airflow/.astro/
+airflow/logs/
+airflow_settings.yaml
+
+# --- Ingestion (generated NDJSON staging, not committed) ---
+ingestion/_ndjson/
+
+# --- Power BI temp ---
+*.tmp
+~$*.pbix
+
+# --- OS / editor ---
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

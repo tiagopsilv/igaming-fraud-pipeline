@@ -1,0 +1,5 @@
+# Development dependencies (tests + code quality)
+-r requirements.txt
+pytest>=8.0
+ruff>=0.6
+pandas-stubs>=2.0   # type stubs so the editor/type-checker understands pandas

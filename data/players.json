@@ -1,0 +1,3602 @@
+[
+  {
+    "player_id": "pl_1000",
+    "email": "user0@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-07-30"
+  },
+  {
+    "player_id": "pl_1001",
+    "email": "user1@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-03-28"
+  },
+  {
+    "player_id": "pl_1002",
+    "email": "USER2@MAIL.COM",
+    "city": "Porto Alegre",
+    "created_at": "2024-01-18"
+  },
+  {
+    "player_id": "pl_1003",
+    "email": "user3@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2023-09-23"
+  },
+  {
+    "player_id": "pl_1004",
+    "email": "user4@mail.com",
+    "city": "Salvador",
+    "created_at": "2026-01-18"
+  },
+  {
+    "player_id": "pl_1005",
+    "email": "user5@mail.com",
+    "city": "Salvador",
+    "created_at": "2023-12-05"
+  },
+  {
+    "player_id": "pl_1006",
+    "email": "user6@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-11-17"
+  },
+  {
+    "player_id": "pl_1007",
+    "email": "USER7@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-01-16"
+  },
+  {
+    "player_id": "pl_1008",
+    "email": "user8@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-02-25"
+  },
+  {
+    "player_id": "pl_1009",
+    "email": "user9@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-12-29"
+  },
+  {
+    "player_id": "pl_1010",
+    "email": "user10@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-04-24"
+  },
+  {
+    "player_id": "pl_1011",
+    "email": "user11@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-09-23"
+  },
+  {
+    "player_id": "pl_1012",
+    "email": "user12@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-02-06"
+  },
+  {
+    "player_id": "pl_1013",
+    "email": "user13@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-11-01"
+  },
+  {
+    "player_id": "pl_1014",
+    "email": "user14@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-07-31"
+  },
+  {
+    "player_id": "pl_1015",
+    "email": "user15@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-02-15"
+  },
+  {
+    "player_id": "pl_1016",
+    "email": "USER16@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2023-12-20"
+  },
+  {
+    "player_id": "pl_1017",
+    "email": "user17@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-06-27"
+  },
+  {
+    "player_id": "pl_1018",
+    "email": "user18@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-02-07"
+  },
+  {
+    "player_id": "pl_1019",
+    "email": "user19@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-01-03"
+  },
+  {
+    "player_id": "pl_1020",
+    "email": "user20@mail.com",
+    "city": "São Paulo",
+    "created_at": "2023-10-03"
+  },
+  {
+    "player_id": "pl_1021",
+    "email": "user21@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-04-02"
+  },
+  {
+    "player_id": "pl_1022",
+    "email": "user22@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-03-11"
+  },
+  {
+    "player_id": "pl_1023",
+    "email": "user23@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-06-06"
+  },
+  {
+    "player_id": "pl_1024",
+    "email": "user24@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-06-13"
+  },
+  {
+    "player_id": "pl_1025",
+    "email": "user25@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-02-16"
+  },
+  {
+    "player_id": "pl_1026",
+    "email": "user26@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-09-21"
+  },
+  {
+    "player_id": "pl_1027",
+    "email": "user27@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-04-25"
+  },
+  {
+    "player_id": "pl_1028",
+    "email": "user28@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-10-09"
+  },
+  {
+    "player_id": "pl_1029",
+    "email": "user29@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-05-03"
+  },
+  {
+    "player_id": "pl_1030",
+    "email": "USER30@MAIL.COM",
+    "city": "Porto Alegre",
+    "created_at": "2025-05-27"
+  },
+  {
+    "player_id": "pl_1031",
+    "email": "USER31@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-09-08"
+  },
+  {
+    "player_id": "pl_1032",
+    "email": "user32@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-01-21"
+  },
+  {
+    "player_id": "pl_1033",
+    "email": "user33@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2026-01-09"
+  },
+  {
+    "player_id": "pl_1034",
+    "email": "USER34@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2026-03-09"
+  },
+  {
+    "player_id": "pl_1035",
+    "email": "user35@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-01-27"
+  },
+  {
+    "player_id": "pl_1036",
+    "email": "USER36@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-07-08"
+  },
+  {
+    "player_id": "pl_1037",
+    "email": "user37@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-06-18"
+  },
+  {
+    "player_id": "pl_1038",
+    "email": "user38@mail.com",
+    "city": "Salvador",
+    "created_at": "2023-10-05"
+  },
+  {
+    "player_id": "pl_1039",
+    "email": "USER39@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2025-12-31"
+  },
+  {
+    "player_id": "pl_1040",
+    "email": "user40@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-04-12"
+  },
+  {
+    "player_id": "pl_1041",
+    "email": "user41@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-09-22"
+  },
+  {
+    "player_id": "pl_1042",
+    "email": "user42@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-01-26"
+  },
+  {
+    "player_id": "pl_1043",
+    "email": "user43@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-06-22"
+  },
+  {
+    "player_id": "pl_1044",
+    "email": "user44@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-06-09"
+  },
+  {
+    "player_id": "pl_1045",
+    "email": "user45@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-06-08"
+  },
+  {
+    "player_id": "pl_1046",
+    "email": "user46@mail.com",
+    "city": "Curitiba",
+    "created_at": "2023-11-26"
+  },
+  {
+    "player_id": "pl_1047",
+    "email": "USER47@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-05-16"
+  },
+  {
+    "player_id": "pl_1048",
+    "email": "user48@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-11-06"
+  },
+  {
+    "player_id": "pl_1049",
+    "email": "user49@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-03-29"
+  },
+  {
+    "player_id": "pl_1050",
+    "email": "user50@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-03-16"
+  },
+  {
+    "player_id": "pl_1051",
+    "email": "user51@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-01-11"
+  },
+  {
+    "player_id": "pl_1052",
+    "email": "USER52@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2026-01-11"
+  },
+  {
+    "player_id": "pl_1053",
+    "email": "user53@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-04-23"
+  },
+  {
+    "player_id": "pl_1054",
+    "email": "user54@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-01-01"
+  },
+  {
+    "player_id": "pl_1055",
+    "email": "user55@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-11-28"
+  },
+  {
+    "player_id": "pl_1056",
+    "email": "user56@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-12-04"
+  },
+  {
+    "player_id": "pl_1057",
+    "email": "user57@mail.com",
+    "city": "Salvador",
+    "created_at": "2023-11-07"
+  },
+  {
+    "player_id": "pl_1058",
+    "email": "user58@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-05-30"
+  },
+  {
+    "player_id": "pl_1059",
+    "email": "user59@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-12-17"
+  },
+  {
+    "player_id": "pl_1060",
+    "email": "user60@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-04-10"
+  },
+  {
+    "player_id": "pl_1061",
+    "email": "user61@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-05-04"
+  },
+  {
+    "player_id": "pl_1062",
+    "email": "user62@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-10-03"
+  },
+  {
+    "player_id": "pl_1063",
+    "email": "USER63@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-03-03"
+  },
+  {
+    "player_id": "pl_1064",
+    "email": "user64@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-07-13"
+  },
+  {
+    "player_id": "pl_1065",
+    "email": "user65@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-01-09"
+  },
+  {
+    "player_id": "pl_1066",
+    "email": "USER66@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-09-23"
+  },
+  {
+    "player_id": "pl_1067",
+    "email": "user67@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2023-10-13"
+  },
+  {
+    "player_id": "pl_1068",
+    "email": "user68@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-12-24"
+  },
+  {
+    "player_id": "pl_1069",
+    "email": "user69@mail.com",
+    "city": "São Paulo",
+    "created_at": "2026-02-07"
+  },
+  {
+    "player_id": "pl_1070",
+    "email": "user70@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-05-26"
+  },
+  {
+    "player_id": "pl_1071",
+    "email": "user71@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-01-26"
+  },
+  {
+    "player_id": "pl_1072",
+    "email": "user72@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-09-13"
+  },
+  {
+    "player_id": "pl_1073",
+    "email": "user73@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-07-19"
+  },
+  {
+    "player_id": "pl_1074",
+    "email": "USER74@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2024-06-26"
+  },
+  {
+    "player_id": "pl_1075",
+    "email": "user75@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-04-18"
+  },
+  {
+    "player_id": "pl_1076",
+    "email": "user76@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-06-26"
+  },
+  {
+    "player_id": "pl_1077",
+    "email": "user77@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-01-26"
+  },
+  {
+    "player_id": "pl_1078",
+    "email": "user78@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-11-02"
+  },
+  {
+    "player_id": "pl_1079",
+    "email": "user79@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-12-03"
+  },
+  {
+    "player_id": "pl_1080",
+    "email": "user80@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-09-22"
+  },
+  {
+    "player_id": "pl_1081",
+    "email": "user81@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2023-09-26"
+  },
+  {
+    "player_id": "pl_1082",
+    "email": "USER82@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2024-02-15"
+  },
+  {
+    "player_id": "pl_1083",
+    "email": "user83@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-06-09"
+  },
+  {
+    "player_id": "pl_1084",
+    "email": "user84@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-11-16"
+  },
+  {
+    "player_id": "pl_1085",
+    "email": "user85@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-12-19"
+  },
+  {
+    "player_id": "pl_1086",
+    "email": "user86@mail.com",
+    "city": "Salvador",
+    "created_at": "2026-01-02"
+  },
+  {
+    "player_id": "pl_1087",
+    "email": "user87@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-09-09"
+  },
+  {
+    "player_id": "pl_1088",
+    "email": "USER88@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2025-08-19"
+  },
+  {
+    "player_id": "pl_1089",
+    "email": "USER89@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2025-05-28"
+  },
+  {
+    "player_id": "pl_1090",
+    "email": "user90@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-01-17"
+  },
+  {
+    "player_id": "pl_1091",
+    "email": "USER91@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-06-07"
+  },
+  {
+    "player_id": "pl_1092",
+    "email": "user92@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-07-07"
+  },
+  {
+    "player_id": "pl_1093",
+    "email": "user93@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2026-01-14"
+  },
+  {
+    "player_id": "pl_1094",
+    "email": "USER94@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2025-09-16"
+  },
+  {
+    "player_id": "pl_1095",
+    "email": "user95@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-10-31"
+  },
+  {
+    "player_id": "pl_1096",
+    "email": "USER96@MAIL.COM",
+    "city": "Porto Alegre",
+    "created_at": "2025-03-26"
+  },
+  {
+    "player_id": "pl_1097",
+    "email": "user97@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-10-17"
+  },
+  {
+    "player_id": "pl_1098",
+    "email": "user98@mail.com",
+    "city": "São Paulo",
+    "created_at": "2023-10-15"
+  },
+  {
+    "player_id": "pl_1099",
+    "email": "user99@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-02-11"
+  },
+  {
+    "player_id": "pl_1100",
+    "email": "user100@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-12-15"
+  },
+  {
+    "player_id": "pl_1101",
+    "email": "user101@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-03-20"
+  },
+  {
+    "player_id": "pl_1102",
+    "email": "user102@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-12-22"
+  },
+  {
+    "player_id": "pl_1103",
+    "email": "USER103@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2025-06-25"
+  },
+  {
+    "player_id": "pl_1104",
+    "email": "user104@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-04-26"
+  },
+  {
+    "player_id": "pl_1105",
+    "email": "user105@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-08-07"
+  },
+  {
+    "player_id": "pl_1106",
+    "email": "user106@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-10-31"
+  },
+  {
+    "player_id": "pl_1107",
+    "email": "USER107@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2025-04-28"
+  },
+  {
+    "player_id": "pl_1108",
+    "email": "USER108@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2023-10-31"
+  },
+  {
+    "player_id": "pl_1109",
+    "email": "user109@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-07-16"
+  },
+  {
+    "player_id": "pl_1110",
+    "email": "user110@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-06-07"
+  },
+  {
+    "player_id": "pl_1111",
+    "email": "user111@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-03-23"
+  },
+  {
+    "player_id": "pl_1112",
+    "email": "user112@mail.com",
+    "city": "Curitiba",
+    "created_at": "2023-11-24"
+  },
+  {
+    "player_id": "pl_1113",
+    "email": "USER113@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2025-06-27"
+  },
+  {
+    "player_id": "pl_1114",
+    "email": "USER114@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-11-04"
+  },
+  {
+    "player_id": "pl_1115",
+    "email": "user115@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-05-25"
+  },
+  {
+    "player_id": "pl_1116",
+    "email": "USER116@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-04-30"
+  },
+  {
+    "player_id": "pl_1117",
+    "email": "user117@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-05-07"
+  },
+  {
+    "player_id": "pl_1118",
+    "email": "user118@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-09-25"
+  },
+  {
+    "player_id": "pl_1119",
+    "email": "USER119@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2024-07-01"
+  },
+  {
+    "player_id": "pl_1120",
+    "email": "user120@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-03-07"
+  },
+  {
+    "player_id": "pl_1121",
+    "email": "user121@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-12-27"
+  },
+  {
+    "player_id": "pl_1122",
+    "email": "USER122@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-06-27"
+  },
+  {
+    "player_id": "pl_1123",
+    "email": "user123@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-08-07"
+  },
+  {
+    "player_id": "pl_1124",
+    "email": "user124@mail.com",
+    "city": "Salvador",
+    "created_at": "2026-01-03"
+  },
+  {
+    "player_id": "pl_1125",
+    "email": "user125@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-12-26"
+  },
+  {
+    "player_id": "pl_1126",
+    "email": "user126@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-02-14"
+  },
+  {
+    "player_id": "pl_1127",
+    "email": "user127@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-05-05"
+  },
+  {
+    "player_id": "pl_1128",
+    "email": "user128@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-02-21"
+  },
+  {
+    "player_id": "pl_1129",
+    "email": "user129@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-10-21"
+  },
+  {
+    "player_id": "pl_1130",
+    "email": "user130@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-10-24"
+  },
+  {
+    "player_id": "pl_1131",
+    "email": "user131@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-03-21"
+  },
+  {
+    "player_id": "pl_1132",
+    "email": "user132@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2023-11-04"
+  },
+  {
+    "player_id": "pl_1133",
+    "email": "user133@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-05-26"
+  },
+  {
+    "player_id": "pl_1134",
+    "email": "user134@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-09-07"
+  },
+  {
+    "player_id": "pl_1135",
+    "email": "user135@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-06-02"
+  },
+  {
+    "player_id": "pl_1136",
+    "email": "user136@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2023-10-10"
+  },
+  {
+    "player_id": "pl_1137",
+    "email": "user137@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-12-29"
+  },
+  {
+    "player_id": "pl_1138",
+    "email": "user138@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-04-18"
+  },
+  {
+    "player_id": "pl_1139",
+    "email": "user139@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-03-30"
+  },
+  {
+    "player_id": "pl_1140",
+    "email": "user140@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-03-20"
+  },
+  {
+    "player_id": "pl_1141",
+    "email": "USER141@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2024-02-24"
+  },
+  {
+    "player_id": "pl_1142",
+    "email": "user142@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2023-12-08"
+  },
+  {
+    "player_id": "pl_1143",
+    "email": "user143@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-01-18"
+  },
+  {
+    "player_id": "pl_1144",
+    "email": "USER144@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2024-07-18"
+  },
+  {
+    "player_id": "pl_1145",
+    "email": "USER145@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2025-02-05"
+  },
+  {
+    "player_id": "pl_1146",
+    "email": "user146@mail.com",
+    "city": "Curitiba",
+    "created_at": "2023-09-22"
+  },
+  {
+    "player_id": "pl_1147",
+    "email": "user147@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-06-24"
+  },
+  {
+    "player_id": "pl_1148",
+    "email": "USER148@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2024-03-09"
+  },
+  {
+    "player_id": "pl_1149",
+    "email": "user149@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2023-12-15"
+  },
+  {
+    "player_id": "pl_1150",
+    "email": "user150@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2023-09-28"
+  },
+  {
+    "player_id": "pl_1151",
+    "email": "USER151@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2025-11-25"
+  },
+  {
+    "player_id": "pl_1152",
+    "email": "user152@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-03-13"
+  },
+  {
+    "player_id": "pl_1153",
+    "email": "user153@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-05-13"
+  },
+  {
+    "player_id": "pl_1154",
+    "email": "user154@mail.com",
+    "city": "São Paulo",
+    "created_at": "2026-01-11"
+  },
+  {
+    "player_id": "pl_1155",
+    "email": "user155@mail.com",
+    "city": "Salvador",
+    "created_at": "2026-02-18"
+  },
+  {
+    "player_id": "pl_1156",
+    "email": "user156@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-01-25"
+  },
+  {
+    "player_id": "pl_1157",
+    "email": "USER157@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2024-01-02"
+  },
+  {
+    "player_id": "pl_1158",
+    "email": "user158@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-05-20"
+  },
+  {
+    "player_id": "pl_1159",
+    "email": "user159@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-10-08"
+  },
+  {
+    "player_id": "pl_1160",
+    "email": "user160@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-05-15"
+  },
+  {
+    "player_id": "pl_1161",
+    "email": "user161@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-12-27"
+  },
+  {
+    "player_id": "pl_1162",
+    "email": "user162@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-03-20"
+  },
+  {
+    "player_id": "pl_1163",
+    "email": "user163@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2023-12-21"
+  },
+  {
+    "player_id": "pl_1164",
+    "email": "user164@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-12-03"
+  },
+  {
+    "player_id": "pl_1165",
+    "email": "user165@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-04-19"
+  },
+  {
+    "player_id": "pl_1166",
+    "email": "user166@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-01-23"
+  },
+  {
+    "player_id": "pl_1167",
+    "email": "user167@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-05-22"
+  },
+  {
+    "player_id": "pl_1168",
+    "email": "user168@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-04-10"
+  },
+  {
+    "player_id": "pl_1169",
+    "email": "user169@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2023-10-19"
+  },
+  {
+    "player_id": "pl_1170",
+    "email": "user170@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-12-20"
+  },
+  {
+    "player_id": "pl_1171",
+    "email": "USER171@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2025-11-06"
+  },
+  {
+    "player_id": "pl_1172",
+    "email": "user172@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2026-03-02"
+  },
+  {
+    "player_id": "pl_1173",
+    "email": "user173@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-10-31"
+  },
+  {
+    "player_id": "pl_1174",
+    "email": "user174@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-09-27"
+  },
+  {
+    "player_id": "pl_1175",
+    "email": "USER175@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2024-06-16"
+  },
+  {
+    "player_id": "pl_1176",
+    "email": "USER176@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2023-11-02"
+  },
+  {
+    "player_id": "pl_1177",
+    "email": "user177@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-08-24"
+  },
+  {
+    "player_id": "pl_1178",
+    "email": "user178@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-03-11"
+  },
+  {
+    "player_id": "pl_1179",
+    "email": "user179@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-08-09"
+  },
+  {
+    "player_id": "pl_1180",
+    "email": "USER180@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2024-12-31"
+  },
+  {
+    "player_id": "pl_1181",
+    "email": "user181@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2023-12-02"
+  },
+  {
+    "player_id": "pl_1182",
+    "email": "user182@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-02-17"
+  },
+  {
+    "player_id": "pl_1183",
+    "email": "user183@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-09-06"
+  },
+  {
+    "player_id": "pl_1184",
+    "email": "user184@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-06-08"
+  },
+  {
+    "player_id": "pl_1185",
+    "email": "USER185@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2024-12-08"
+  },
+  {
+    "player_id": "pl_1186",
+    "email": "user186@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-05-21"
+  },
+  {
+    "player_id": "pl_1187",
+    "email": "user187@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-11-25"
+  },
+  {
+    "player_id": "pl_1188",
+    "email": "user188@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2023-10-30"
+  },
+  {
+    "player_id": "pl_1189",
+    "email": "user189@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-09-23"
+  },
+  {
+    "player_id": "pl_1190",
+    "email": "user190@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-02-15"
+  },
+  {
+    "player_id": "pl_1191",
+    "email": "user191@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-06-27"
+  },
+  {
+    "player_id": "pl_1192",
+    "email": "USER192@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2025-10-05"
+  },
+  {
+    "player_id": "pl_1193",
+    "email": "user193@mail.com",
+    "city": "São Paulo",
+    "created_at": "2026-02-04"
+  },
+  {
+    "player_id": "pl_1194",
+    "email": "user194@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-03-28"
+  },
+  {
+    "player_id": "pl_1195",
+    "email": "user195@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2026-01-04"
+  },
+  {
+    "player_id": "pl_1196",
+    "email": "USER196@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2024-07-04"
+  },
+  {
+    "player_id": "pl_1197",
+    "email": "user197@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-11-20"
+  },
+  {
+    "player_id": "pl_1198",
+    "email": "user198@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-07-08"
+  },
+  {
+    "player_id": "pl_1199",
+    "email": "user199@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-07-05"
+  },
+  {
+    "player_id": "pl_1200",
+    "email": "user200@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-03-26"
+  },
+  {
+    "player_id": "pl_1201",
+    "email": "user201@mail.com",
+    "city": "São Paulo",
+    "created_at": "2026-02-04"
+  },
+  {
+    "player_id": "pl_1202",
+    "email": "user202@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-12-31"
+  },
+  {
+    "player_id": "pl_1203",
+    "email": "user203@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-05-13"
+  },
+  {
+    "player_id": "pl_1204",
+    "email": "user204@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2023-11-30"
+  },
+  {
+    "player_id": "pl_1205",
+    "email": "user205@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-06-01"
+  },
+  {
+    "player_id": "pl_1206",
+    "email": "user206@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-10-23"
+  },
+  {
+    "player_id": "pl_1207",
+    "email": "user207@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2023-10-07"
+  },
+  {
+    "player_id": "pl_1208",
+    "email": "user208@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-07-28"
+  },
+  {
+    "player_id": "pl_1209",
+    "email": "user209@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-09-24"
+  },
+  {
+    "player_id": "pl_1210",
+    "email": "user210@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-12-18"
+  },
+  {
+    "player_id": "pl_1211",
+    "email": "user211@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-11-06"
+  },
+  {
+    "player_id": "pl_1212",
+    "email": "user212@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-12-30"
+  },
+  {
+    "player_id": "pl_1213",
+    "email": "USER213@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-01-20"
+  },
+  {
+    "player_id": "pl_1214",
+    "email": "user214@mail.com",
+    "city": "São Paulo",
+    "created_at": "2023-12-30"
+  },
+  {
+    "player_id": "pl_1215",
+    "email": "user215@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-05-14"
+  },
+  {
+    "player_id": "pl_1216",
+    "email": "user216@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-10-06"
+  },
+  {
+    "player_id": "pl_1217",
+    "email": "user217@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-01-25"
+  },
+  {
+    "player_id": "pl_1218",
+    "email": "user218@mail.com",
+    "city": "Salvador",
+    "created_at": "2026-02-15"
+  },
+  {
+    "player_id": "pl_1219",
+    "email": "USER219@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-10-12"
+  },
+  {
+    "player_id": "pl_1220",
+    "email": "user220@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-09-21"
+  },
+  {
+    "player_id": "pl_1221",
+    "email": "user221@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-11-24"
+  },
+  {
+    "player_id": "pl_1222",
+    "email": "user222@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2023-10-07"
+  },
+  {
+    "player_id": "pl_1223",
+    "email": "user223@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-07-12"
+  },
+  {
+    "player_id": "pl_1224",
+    "email": "user224@mail.com",
+    "city": "Salvador",
+    "created_at": "2023-12-30"
+  },
+  {
+    "player_id": "pl_1225",
+    "email": "user225@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-01-22"
+  },
+  {
+    "player_id": "pl_1226",
+    "email": "USER226@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2025-02-09"
+  },
+  {
+    "player_id": "pl_1227",
+    "email": "user227@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-07-27"
+  },
+  {
+    "player_id": "pl_1228",
+    "email": "user228@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-01-13"
+  },
+  {
+    "player_id": "pl_1229",
+    "email": "user229@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-04-19"
+  },
+  {
+    "player_id": "pl_1230",
+    "email": "user230@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-03-08"
+  },
+  {
+    "player_id": "pl_1231",
+    "email": "user231@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-01-06"
+  },
+  {
+    "player_id": "pl_1232",
+    "email": "user232@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-02-25"
+  },
+  {
+    "player_id": "pl_1233",
+    "email": "user233@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-02-12"
+  },
+  {
+    "player_id": "pl_1234",
+    "email": "user234@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-10-06"
+  },
+  {
+    "player_id": "pl_1235",
+    "email": "user235@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-09-02"
+  },
+  {
+    "player_id": "pl_1236",
+    "email": "user236@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2023-10-11"
+  },
+  {
+    "player_id": "pl_1237",
+    "email": "user237@mail.com",
+    "city": "Curitiba",
+    "created_at": "2026-01-31"
+  },
+  {
+    "player_id": "pl_1238",
+    "email": "user238@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-06-16"
+  },
+  {
+    "player_id": "pl_1239",
+    "email": "USER239@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2024-07-14"
+  },
+  {
+    "player_id": "pl_1240",
+    "email": "user240@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-10-29"
+  },
+  {
+    "player_id": "pl_1241",
+    "email": "user241@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-02-22"
+  },
+  {
+    "player_id": "pl_1242",
+    "email": "user242@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-06-15"
+  },
+  {
+    "player_id": "pl_1243",
+    "email": "user243@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-02-06"
+  },
+  {
+    "player_id": "pl_1244",
+    "email": "USER244@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2025-04-13"
+  },
+  {
+    "player_id": "pl_1245",
+    "email": "user245@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-06-05"
+  },
+  {
+    "player_id": "pl_1246",
+    "email": "user246@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-01-14"
+  },
+  {
+    "player_id": "pl_1247",
+    "email": "user247@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2023-12-09"
+  },
+  {
+    "player_id": "pl_1248",
+    "email": "USER248@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2025-05-04"
+  },
+  {
+    "player_id": "pl_1249",
+    "email": "USER249@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2025-01-15"
+  },
+  {
+    "player_id": "pl_1250",
+    "email": "user250@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-07-01"
+  },
+  {
+    "player_id": "pl_1251",
+    "email": "user251@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-01-11"
+  },
+  {
+    "player_id": "pl_1252",
+    "email": "user252@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-03-20"
+  },
+  {
+    "player_id": "pl_1253",
+    "email": "user253@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-08-28"
+  },
+  {
+    "player_id": "pl_1254",
+    "email": "user254@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-12-29"
+  },
+  {
+    "player_id": "pl_1255",
+    "email": "user255@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-07-06"
+  },
+  {
+    "player_id": "pl_1256",
+    "email": "user256@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-04-02"
+  },
+  {
+    "player_id": "pl_1257",
+    "email": "user257@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-06-24"
+  },
+  {
+    "player_id": "pl_1258",
+    "email": "user258@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-11-06"
+  },
+  {
+    "player_id": "pl_1259",
+    "email": "USER259@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2025-07-03"
+  },
+  {
+    "player_id": "pl_1260",
+    "email": "user260@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-04-15"
+  },
+  {
+    "player_id": "pl_1261",
+    "email": "user261@mail.com",
+    "city": "Salvador",
+    "created_at": "2023-12-14"
+  },
+  {
+    "player_id": "pl_1262",
+    "email": "user262@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-04-18"
+  },
+  {
+    "player_id": "pl_1263",
+    "email": "USER263@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2024-07-15"
+  },
+  {
+    "player_id": "pl_1264",
+    "email": "user264@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-09-15"
+  },
+  {
+    "player_id": "pl_1265",
+    "email": "USER265@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2025-01-15"
+  },
+  {
+    "player_id": "pl_1266",
+    "email": "user266@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2023-09-25"
+  },
+  {
+    "player_id": "pl_1267",
+    "email": "user267@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-05-03"
+  },
+  {
+    "player_id": "pl_1268",
+    "email": "user268@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-05-03"
+  },
+  {
+    "player_id": "pl_1269",
+    "email": "user269@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-12-16"
+  },
+  {
+    "player_id": "pl_1270",
+    "email": "USER270@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2024-04-10"
+  },
+  {
+    "player_id": "pl_1271",
+    "email": "user271@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-09-03"
+  },
+  {
+    "player_id": "pl_1272",
+    "email": "user272@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-10-18"
+  },
+  {
+    "player_id": "pl_1273",
+    "email": "user273@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2026-02-09"
+  },
+  {
+    "player_id": "pl_1274",
+    "email": "user274@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-06-16"
+  },
+  {
+    "player_id": "pl_1275",
+    "email": "USER275@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2024-09-08"
+  },
+  {
+    "player_id": "pl_1276",
+    "email": "user276@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-06-23"
+  },
+  {
+    "player_id": "pl_1277",
+    "email": "user277@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-08-14"
+  },
+  {
+    "player_id": "pl_1278",
+    "email": "user278@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-12-21"
+  },
+  {
+    "player_id": "pl_1279",
+    "email": "user279@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-05-05"
+  },
+  {
+    "player_id": "pl_1280",
+    "email": "user280@mail.com",
+    "city": "Salvador",
+    "created_at": "2023-10-31"
+  },
+  {
+    "player_id": "pl_1281",
+    "email": "user281@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-12-15"
+  },
+  {
+    "player_id": "pl_1282",
+    "email": "USER282@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-02-11"
+  },
+  {
+    "player_id": "pl_1283",
+    "email": "user283@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-07-03"
+  },
+  {
+    "player_id": "pl_1284",
+    "email": "user284@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-01-26"
+  },
+  {
+    "player_id": "pl_1285",
+    "email": "USER285@MAIL.COM",
+    "city": "Porto Alegre",
+    "created_at": "2023-11-23"
+  },
+  {
+    "player_id": "pl_1286",
+    "email": "USER286@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2026-02-23"
+  },
+  {
+    "player_id": "pl_1287",
+    "email": "user287@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-01-21"
+  },
+  {
+    "player_id": "pl_1288",
+    "email": "USER288@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2026-01-18"
+  },
+  {
+    "player_id": "pl_1289",
+    "email": "user289@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-11-11"
+  },
+  {
+    "player_id": "pl_1290",
+    "email": "user290@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2023-10-22"
+  },
+  {
+    "player_id": "pl_1291",
+    "email": "user291@mail.com",
+    "city": "São Paulo",
+    "created_at": "2023-10-02"
+  },
+  {
+    "player_id": "pl_1292",
+    "email": "USER292@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-10-28"
+  },
+  {
+    "player_id": "pl_1293",
+    "email": "user293@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-12-10"
+  },
+  {
+    "player_id": "pl_1294",
+    "email": "USER294@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2024-12-11"
+  },
+  {
+    "player_id": "pl_1295",
+    "email": "USER295@MAIL.COM",
+    "city": "Porto Alegre",
+    "created_at": "2024-06-08"
+  },
+  {
+    "player_id": "pl_1296",
+    "email": "user296@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-10-03"
+  },
+  {
+    "player_id": "pl_1297",
+    "email": "user297@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-06-10"
+  },
+  {
+    "player_id": "pl_1298",
+    "email": "user298@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-01-16"
+  },
+  {
+    "player_id": "pl_1299",
+    "email": "user299@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-06-21"
+  },
+  {
+    "player_id": "pl_1300",
+    "email": "USER300@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2025-09-30"
+  },
+  {
+    "player_id": "pl_1301",
+    "email": "user301@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-09-30"
+  },
+  {
+    "player_id": "pl_1302",
+    "email": "user302@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-01-22"
+  },
+  {
+    "player_id": "pl_1303",
+    "email": "user303@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-12-29"
+  },
+  {
+    "player_id": "pl_1304",
+    "email": "user304@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-01-26"
+  },
+  {
+    "player_id": "pl_1305",
+    "email": "USER305@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2025-01-31"
+  },
+  {
+    "player_id": "pl_1306",
+    "email": "USER306@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-05-15"
+  },
+  {
+    "player_id": "pl_1307",
+    "email": "USER307@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2025-11-23"
+  },
+  {
+    "player_id": "pl_1308",
+    "email": "USER308@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2023-11-18"
+  },
+  {
+    "player_id": "pl_1309",
+    "email": "user309@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-11-15"
+  },
+  {
+    "player_id": "pl_1310",
+    "email": "user310@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-03-16"
+  },
+  {
+    "player_id": "pl_1311",
+    "email": "user311@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-06-06"
+  },
+  {
+    "player_id": "pl_1312",
+    "email": "user312@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-08-01"
+  },
+  {
+    "player_id": "pl_1313",
+    "email": "user313@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-06-19"
+  },
+  {
+    "player_id": "pl_1314",
+    "email": "user314@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-09-08"
+  },
+  {
+    "player_id": "pl_1315",
+    "email": "user315@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-06-28"
+  },
+  {
+    "player_id": "pl_1316",
+    "email": "user316@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-04-06"
+  },
+  {
+    "player_id": "pl_1317",
+    "email": "user317@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-10-17"
+  },
+  {
+    "player_id": "pl_1318",
+    "email": "user318@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-10-19"
+  },
+  {
+    "player_id": "pl_1319",
+    "email": "user319@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-12-20"
+  },
+  {
+    "player_id": "pl_1320",
+    "email": "USER320@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2023-12-13"
+  },
+  {
+    "player_id": "pl_1321",
+    "email": "USER321@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-03-16"
+  },
+  {
+    "player_id": "pl_1322",
+    "email": "user322@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-07-30"
+  },
+  {
+    "player_id": "pl_1323",
+    "email": "user323@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-05-08"
+  },
+  {
+    "player_id": "pl_1324",
+    "email": "user324@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-07-07"
+  },
+  {
+    "player_id": "pl_1325",
+    "email": "user325@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-10-06"
+  },
+  {
+    "player_id": "pl_1326",
+    "email": "user326@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-06-23"
+  },
+  {
+    "player_id": "pl_1327",
+    "email": "user327@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-07-14"
+  },
+  {
+    "player_id": "pl_1328",
+    "email": "user328@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-04-05"
+  },
+  {
+    "player_id": "pl_1329",
+    "email": "user329@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-01-11"
+  },
+  {
+    "player_id": "pl_1330",
+    "email": "user330@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-04-07"
+  },
+  {
+    "player_id": "pl_1331",
+    "email": "user331@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-12-19"
+  },
+  {
+    "player_id": "pl_1332",
+    "email": "user332@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-06-23"
+  },
+  {
+    "player_id": "pl_1333",
+    "email": "user333@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-07-22"
+  },
+  {
+    "player_id": "pl_1334",
+    "email": "user334@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-02-26"
+  },
+  {
+    "player_id": "pl_1335",
+    "email": "USER335@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2024-04-22"
+  },
+  {
+    "player_id": "pl_1336",
+    "email": "USER336@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2024-05-21"
+  },
+  {
+    "player_id": "pl_1337",
+    "email": "user337@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-01-21"
+  },
+  {
+    "player_id": "pl_1338",
+    "email": "user338@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-12-25"
+  },
+  {
+    "player_id": "pl_1339",
+    "email": "user339@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-03-11"
+  },
+  {
+    "player_id": "pl_1340",
+    "email": "USER340@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-06-12"
+  },
+  {
+    "player_id": "pl_1341",
+    "email": "USER341@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2023-11-04"
+  },
+  {
+    "player_id": "pl_1342",
+    "email": "user342@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-05-09"
+  },
+  {
+    "player_id": "pl_1343",
+    "email": "user343@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-09-15"
+  },
+  {
+    "player_id": "pl_1344",
+    "email": "user344@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-07-24"
+  },
+  {
+    "player_id": "pl_1345",
+    "email": "USER345@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-07-06"
+  },
+  {
+    "player_id": "pl_1346",
+    "email": "user346@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2023-11-02"
+  },
+  {
+    "player_id": "pl_1347",
+    "email": "user347@mail.com",
+    "city": "São Paulo",
+    "created_at": "2026-01-06"
+  },
+  {
+    "player_id": "pl_1348",
+    "email": "user348@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-05-12"
+  },
+  {
+    "player_id": "pl_1349",
+    "email": "USER349@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-09-30"
+  },
+  {
+    "player_id": "pl_1350",
+    "email": "user350@mail.com",
+    "city": "Salvador",
+    "created_at": "2023-12-31"
+  },
+  {
+    "player_id": "pl_1351",
+    "email": "user351@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-01-20"
+  },
+  {
+    "player_id": "pl_1352",
+    "email": "user352@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2023-10-16"
+  },
+  {
+    "player_id": "pl_1353",
+    "email": "user353@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-11-10"
+  },
+  {
+    "player_id": "pl_1354",
+    "email": "user354@mail.com",
+    "city": "Salvador",
+    "created_at": "2026-02-08"
+  },
+  {
+    "player_id": "pl_1355",
+    "email": "USER355@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-11-27"
+  },
+  {
+    "player_id": "pl_1356",
+    "email": "USER356@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2026-03-09"
+  },
+  {
+    "player_id": "pl_1357",
+    "email": "user357@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-01-13"
+  },
+  {
+    "player_id": "pl_1358",
+    "email": "user358@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-05-10"
+  },
+  {
+    "player_id": "pl_1359",
+    "email": "USER359@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2024-11-08"
+  },
+  {
+    "player_id": "pl_1360",
+    "email": "user360@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-08-03"
+  },
+  {
+    "player_id": "pl_1361",
+    "email": "user361@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-06-19"
+  },
+  {
+    "player_id": "pl_1362",
+    "email": "user362@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-02-21"
+  },
+  {
+    "player_id": "pl_1363",
+    "email": "user363@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-12-30"
+  },
+  {
+    "player_id": "pl_1364",
+    "email": "user364@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-02-12"
+  },
+  {
+    "player_id": "pl_1365",
+    "email": "user365@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-10-23"
+  },
+  {
+    "player_id": "pl_1366",
+    "email": "USER366@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2025-04-21"
+  },
+  {
+    "player_id": "pl_1367",
+    "email": "USER367@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-01-20"
+  },
+  {
+    "player_id": "pl_1368",
+    "email": "USER368@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2024-08-18"
+  },
+  {
+    "player_id": "pl_1369",
+    "email": "user369@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-04-04"
+  },
+  {
+    "player_id": "pl_1370",
+    "email": "USER370@MAIL.COM",
+    "city": "Porto Alegre",
+    "created_at": "2024-01-31"
+  },
+  {
+    "player_id": "pl_1371",
+    "email": "user371@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-04-24"
+  },
+  {
+    "player_id": "pl_1372",
+    "email": "user372@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-02-08"
+  },
+  {
+    "player_id": "pl_1373",
+    "email": "user373@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-05-05"
+  },
+  {
+    "player_id": "pl_1374",
+    "email": "USER374@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2026-01-19"
+  },
+  {
+    "player_id": "pl_1375",
+    "email": "user375@mail.com",
+    "city": "Salvador",
+    "created_at": "2026-01-24"
+  },
+  {
+    "player_id": "pl_1376",
+    "email": "user376@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-09-12"
+  },
+  {
+    "player_id": "pl_1377",
+    "email": "user377@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2026-01-12"
+  },
+  {
+    "player_id": "pl_1378",
+    "email": "user378@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-04-16"
+  },
+  {
+    "player_id": "pl_1379",
+    "email": "USER379@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2025-02-05"
+  },
+  {
+    "player_id": "pl_1380",
+    "email": "user380@mail.com",
+    "city": "Salvador",
+    "created_at": "2023-10-27"
+  },
+  {
+    "player_id": "pl_1381",
+    "email": "USER381@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2024-10-27"
+  },
+  {
+    "player_id": "pl_1382",
+    "email": "user382@mail.com",
+    "city": "São Paulo",
+    "created_at": "2023-11-17"
+  },
+  {
+    "player_id": "pl_1383",
+    "email": "USER383@MAIL.COM",
+    "city": "Porto Alegre",
+    "created_at": "2024-05-18"
+  },
+  {
+    "player_id": "pl_1384",
+    "email": "user384@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2023-10-03"
+  },
+  {
+    "player_id": "pl_1385",
+    "email": "user385@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-12-12"
+  },
+  {
+    "player_id": "pl_1386",
+    "email": "user386@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-04-15"
+  },
+  {
+    "player_id": "pl_1387",
+    "email": "user387@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-12-19"
+  },
+  {
+    "player_id": "pl_1388",
+    "email": "USER388@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2026-02-17"
+  },
+  {
+    "player_id": "pl_1389",
+    "email": "USER389@MAIL.COM",
+    "city": "Porto Alegre",
+    "created_at": "2024-06-05"
+  },
+  {
+    "player_id": "pl_1390",
+    "email": "user390@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-03-31"
+  },
+  {
+    "player_id": "pl_1391",
+    "email": "USER391@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2025-03-03"
+  },
+  {
+    "player_id": "pl_1392",
+    "email": "user392@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-12-18"
+  },
+  {
+    "player_id": "pl_1393",
+    "email": "user393@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-09-14"
+  },
+  {
+    "player_id": "pl_1394",
+    "email": "user394@mail.com",
+    "city": "São Paulo",
+    "created_at": "2023-11-03"
+  },
+  {
+    "player_id": "pl_1395",
+    "email": "user395@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-07-29"
+  },
+  {
+    "player_id": "pl_1396",
+    "email": "user396@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-08-21"
+  },
+  {
+    "player_id": "pl_1397",
+    "email": "user397@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-08-11"
+  },
+  {
+    "player_id": "pl_1398",
+    "email": "user398@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-10-27"
+  },
+  {
+    "player_id": "pl_1399",
+    "email": "user399@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-01-19"
+  },
+  {
+    "player_id": "pl_1400",
+    "email": "user400@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-04-26"
+  },
+  {
+    "player_id": "pl_1401",
+    "email": "USER401@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-04-13"
+  },
+  {
+    "player_id": "pl_1402",
+    "email": "user402@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-10-30"
+  },
+  {
+    "player_id": "pl_1403",
+    "email": "user403@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-10-14"
+  },
+  {
+    "player_id": "pl_1404",
+    "email": "user404@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-06-10"
+  },
+  {
+    "player_id": "pl_1405",
+    "email": "USER405@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2024-05-11"
+  },
+  {
+    "player_id": "pl_1406",
+    "email": "USER406@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2024-05-13"
+  },
+  {
+    "player_id": "pl_1407",
+    "email": "user407@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-03-10"
+  },
+  {
+    "player_id": "pl_1408",
+    "email": "user408@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-11-09"
+  },
+  {
+    "player_id": "pl_1409",
+    "email": "user409@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-05-28"
+  },
+  {
+    "player_id": "pl_1410",
+    "email": "user410@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-03-19"
+  },
+  {
+    "player_id": "pl_1411",
+    "email": "user411@mail.com",
+    "city": "Salvador",
+    "created_at": "2023-10-25"
+  },
+  {
+    "player_id": "pl_1412",
+    "email": "USER412@MAIL.COM",
+    "city": "Porto Alegre",
+    "created_at": "2024-07-02"
+  },
+  {
+    "player_id": "pl_1413",
+    "email": "USER413@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2024-04-24"
+  },
+  {
+    "player_id": "pl_1414",
+    "email": "user414@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-05-21"
+  },
+  {
+    "player_id": "pl_1415",
+    "email": "user415@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2026-01-19"
+  },
+  {
+    "player_id": "pl_1416",
+    "email": "user416@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2026-02-05"
+  },
+  {
+    "player_id": "pl_1417",
+    "email": "user417@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2023-10-12"
+  },
+  {
+    "player_id": "pl_1418",
+    "email": "user418@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2023-11-20"
+  },
+  {
+    "player_id": "pl_1419",
+    "email": "user419@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-02-13"
+  },
+  {
+    "player_id": "pl_1420",
+    "email": "user420@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2023-11-09"
+  },
+  {
+    "player_id": "pl_1421",
+    "email": "user421@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-05-12"
+  },
+  {
+    "player_id": "pl_1422",
+    "email": "user422@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-09-10"
+  },
+  {
+    "player_id": "pl_1423",
+    "email": "user423@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-05-27"
+  },
+  {
+    "player_id": "pl_1424",
+    "email": "user424@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-08-07"
+  },
+  {
+    "player_id": "pl_1425",
+    "email": "USER425@MAIL.COM",
+    "city": "Porto Alegre",
+    "created_at": "2025-12-08"
+  },
+  {
+    "player_id": "pl_1426",
+    "email": "user426@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-06-11"
+  },
+  {
+    "player_id": "pl_1427",
+    "email": "user427@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-08-12"
+  },
+  {
+    "player_id": "pl_1428",
+    "email": "user428@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-09-17"
+  },
+  {
+    "player_id": "pl_1429",
+    "email": "user429@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-11-04"
+  },
+  {
+    "player_id": "pl_1430",
+    "email": "USER430@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2026-02-09"
+  },
+  {
+    "player_id": "pl_1431",
+    "email": "user431@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-11-21"
+  },
+  {
+    "player_id": "pl_1432",
+    "email": "USER432@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2024-03-14"
+  },
+  {
+    "player_id": "pl_1433",
+    "email": "user433@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-05-15"
+  },
+  {
+    "player_id": "pl_1434",
+    "email": "user434@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-12-03"
+  },
+  {
+    "player_id": "pl_1435",
+    "email": "user435@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-05-13"
+  },
+  {
+    "player_id": "pl_1436",
+    "email": "user436@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-05-11"
+  },
+  {
+    "player_id": "pl_1437",
+    "email": "user437@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-11-16"
+  },
+  {
+    "player_id": "pl_1438",
+    "email": "user438@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-08-12"
+  },
+  {
+    "player_id": "pl_1439",
+    "email": "user439@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-08-06"
+  },
+  {
+    "player_id": "pl_1440",
+    "email": "user440@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-11-29"
+  },
+  {
+    "player_id": "pl_1441",
+    "email": "user441@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-04-06"
+  },
+  {
+    "player_id": "pl_1442",
+    "email": "USER442@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2026-02-21"
+  },
+  {
+    "player_id": "pl_1443",
+    "email": "user443@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-09-27"
+  },
+  {
+    "player_id": "pl_1444",
+    "email": "user444@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-01-31"
+  },
+  {
+    "player_id": "pl_1445",
+    "email": "USER445@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-09-06"
+  },
+  {
+    "player_id": "pl_1446",
+    "email": "USER446@MAIL.COM",
+    "city": "Porto Alegre",
+    "created_at": "2024-08-02"
+  },
+  {
+    "player_id": "pl_1447",
+    "email": "user447@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-03-27"
+  },
+  {
+    "player_id": "pl_1448",
+    "email": "user448@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-05-18"
+  },
+  {
+    "player_id": "pl_1449",
+    "email": "user449@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-06-01"
+  },
+  {
+    "player_id": "pl_1450",
+    "email": "user450@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-10-04"
+  },
+  {
+    "player_id": "pl_1451",
+    "email": "user451@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-09-27"
+  },
+  {
+    "player_id": "pl_1452",
+    "email": "user452@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-07-02"
+  },
+  {
+    "player_id": "pl_1453",
+    "email": "user453@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-02-04"
+  },
+  {
+    "player_id": "pl_1454",
+    "email": "USER454@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-07-16"
+  },
+  {
+    "player_id": "pl_1455",
+    "email": "user455@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-07-18"
+  },
+  {
+    "player_id": "pl_1456",
+    "email": "USER456@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2024-12-06"
+  },
+  {
+    "player_id": "pl_1457",
+    "email": "USER457@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2024-01-30"
+  },
+  {
+    "player_id": "pl_1458",
+    "email": "user458@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-08-26"
+  },
+  {
+    "player_id": "pl_1459",
+    "email": "user459@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-11-16"
+  },
+  {
+    "player_id": "pl_1460",
+    "email": "USER460@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-07-29"
+  },
+  {
+    "player_id": "pl_1461",
+    "email": "USER461@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2023-11-11"
+  },
+  {
+    "player_id": "pl_1462",
+    "email": "user462@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-02-04"
+  },
+  {
+    "player_id": "pl_1463",
+    "email": "USER463@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2024-12-16"
+  },
+  {
+    "player_id": "pl_1464",
+    "email": "user464@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2023-12-19"
+  },
+  {
+    "player_id": "pl_1465",
+    "email": "user465@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2026-03-05"
+  },
+  {
+    "player_id": "pl_1466",
+    "email": "user466@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-05-21"
+  },
+  {
+    "player_id": "pl_1467",
+    "email": "user467@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-04-15"
+  },
+  {
+    "player_id": "pl_1468",
+    "email": "user468@mail.com",
+    "city": "Salvador",
+    "created_at": "2026-03-05"
+  },
+  {
+    "player_id": "pl_1469",
+    "email": "user469@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-01-18"
+  },
+  {
+    "player_id": "pl_1470",
+    "email": "user470@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2026-01-28"
+  },
+  {
+    "player_id": "pl_1471",
+    "email": "user471@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-07-02"
+  },
+  {
+    "player_id": "pl_1472",
+    "email": "user472@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-12-03"
+  },
+  {
+    "player_id": "pl_1473",
+    "email": "user473@mail.com",
+    "city": "São Paulo",
+    "created_at": "2023-10-24"
+  },
+  {
+    "player_id": "pl_1474",
+    "email": "user474@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-04-07"
+  },
+  {
+    "player_id": "pl_1475",
+    "email": "user475@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-05-05"
+  },
+  {
+    "player_id": "pl_1476",
+    "email": "user476@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-01-04"
+  },
+  {
+    "player_id": "pl_1477",
+    "email": "user477@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-11-11"
+  },
+  {
+    "player_id": "pl_1478",
+    "email": "USER478@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2024-06-15"
+  },
+  {
+    "player_id": "pl_1479",
+    "email": "USER479@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-09-21"
+  },
+  {
+    "player_id": "pl_1480",
+    "email": "user480@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-01-31"
+  },
+  {
+    "player_id": "pl_1481",
+    "email": "USER481@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2024-02-21"
+  },
+  {
+    "player_id": "pl_1482",
+    "email": "user482@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2023-12-13"
+  },
+  {
+    "player_id": "pl_1483",
+    "email": "user483@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-08-27"
+  },
+  {
+    "player_id": "pl_1484",
+    "email": "user484@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-09-26"
+  },
+  {
+    "player_id": "pl_1485",
+    "email": "user485@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-06-22"
+  },
+  {
+    "player_id": "pl_1486",
+    "email": "USER486@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-09-27"
+  },
+  {
+    "player_id": "pl_1487",
+    "email": "user487@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-10-21"
+  },
+  {
+    "player_id": "pl_1488",
+    "email": "user488@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-09-05"
+  },
+  {
+    "player_id": "pl_1489",
+    "email": "USER489@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2024-09-19"
+  },
+  {
+    "player_id": "pl_1490",
+    "email": "user490@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-02-16"
+  },
+  {
+    "player_id": "pl_1491",
+    "email": "user491@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2023-09-26"
+  },
+  {
+    "player_id": "pl_1492",
+    "email": "user492@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-04-11"
+  },
+  {
+    "player_id": "pl_1493",
+    "email": "user493@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-11-01"
+  },
+  {
+    "player_id": "pl_1494",
+    "email": "user494@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-10-14"
+  },
+  {
+    "player_id": "pl_1495",
+    "email": "USER495@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2025-11-13"
+  },
+  {
+    "player_id": "pl_1496",
+    "email": "user496@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-05-12"
+  },
+  {
+    "player_id": "pl_1497",
+    "email": "user497@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-01-02"
+  },
+  {
+    "player_id": "pl_1498",
+    "email": "user498@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-08-15"
+  },
+  {
+    "player_id": "pl_1499",
+    "email": "user499@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-06-03"
+  },
+  {
+    "player_id": "pl_1500",
+    "email": "user500@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-10-08"
+  },
+  {
+    "player_id": "pl_1501",
+    "email": "USER501@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2024-11-06"
+  },
+  {
+    "player_id": "pl_1502",
+    "email": "user502@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-11-27"
+  },
+  {
+    "player_id": "pl_1503",
+    "email": "user503@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-07-20"
+  },
+  {
+    "player_id": "pl_1504",
+    "email": "user504@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-01-10"
+  },
+  {
+    "player_id": "pl_1505",
+    "email": "user505@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-02-18"
+  },
+  {
+    "player_id": "pl_1506",
+    "email": "USER506@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2024-11-14"
+  },
+  {
+    "player_id": "pl_1507",
+    "email": "user507@mail.com",
+    "city": "Curitiba",
+    "created_at": "2023-10-31"
+  },
+  {
+    "player_id": "pl_1508",
+    "email": "USER508@MAIL.COM",
+    "city": "Porto Alegre",
+    "created_at": "2025-12-19"
+  },
+  {
+    "player_id": "pl_1509",
+    "email": "USER509@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-01-21"
+  },
+  {
+    "player_id": "pl_1510",
+    "email": "user510@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-11-30"
+  },
+  {
+    "player_id": "pl_1511",
+    "email": "user511@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2023-11-12"
+  },
+  {
+    "player_id": "pl_1512",
+    "email": "user512@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-02-24"
+  },
+  {
+    "player_id": "pl_1513",
+    "email": "USER513@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2025-11-30"
+  },
+  {
+    "player_id": "pl_1514",
+    "email": "USER514@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2024-03-17"
+  },
+  {
+    "player_id": "pl_1515",
+    "email": "user515@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2026-01-12"
+  },
+  {
+    "player_id": "pl_1516",
+    "email": "user516@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-09-09"
+  },
+  {
+    "player_id": "pl_1517",
+    "email": "USER517@MAIL.COM",
+    "city": "Porto Alegre",
+    "created_at": "2025-10-19"
+  },
+  {
+    "player_id": "pl_1518",
+    "email": "user518@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2026-01-05"
+  },
+  {
+    "player_id": "pl_1519",
+    "email": "USER519@MAIL.COM",
+    "city": "Porto Alegre",
+    "created_at": "2026-01-26"
+  },
+  {
+    "player_id": "pl_1520",
+    "email": "user520@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-11-26"
+  },
+  {
+    "player_id": "pl_1521",
+    "email": "user521@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-02-13"
+  },
+  {
+    "player_id": "pl_1522",
+    "email": "user522@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-09-18"
+  },
+  {
+    "player_id": "pl_1523",
+    "email": "user523@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2023-10-31"
+  },
+  {
+    "player_id": "pl_1524",
+    "email": "user524@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-05-28"
+  },
+  {
+    "player_id": "pl_1525",
+    "email": "USER525@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2026-01-11"
+  },
+  {
+    "player_id": "pl_1526",
+    "email": "user526@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-09-21"
+  },
+  {
+    "player_id": "pl_1527",
+    "email": "user527@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-08-11"
+  },
+  {
+    "player_id": "pl_1528",
+    "email": "user528@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-05-14"
+  },
+  {
+    "player_id": "pl_1529",
+    "email": "user529@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-10-25"
+  },
+  {
+    "player_id": "pl_1530",
+    "email": "user530@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2025-08-31"
+  },
+  {
+    "player_id": "pl_1531",
+    "email": "user531@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-12-10"
+  },
+  {
+    "player_id": "pl_1532",
+    "email": "user532@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-08-02"
+  },
+  {
+    "player_id": "pl_1533",
+    "email": "user533@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-06-13"
+  },
+  {
+    "player_id": "pl_1534",
+    "email": "user534@mail.com",
+    "city": "Curitiba",
+    "created_at": "2023-09-25"
+  },
+  {
+    "player_id": "pl_1535",
+    "email": "USER535@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2024-06-03"
+  },
+  {
+    "player_id": "pl_1536",
+    "email": "user536@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-08-17"
+  },
+  {
+    "player_id": "pl_1537",
+    "email": "user537@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-02-12"
+  },
+  {
+    "player_id": "pl_1538",
+    "email": "user538@mail.com",
+    "city": "Curitiba",
+    "created_at": "2023-12-10"
+  },
+  {
+    "player_id": "pl_1539",
+    "email": "user539@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-09-30"
+  },
+  {
+    "player_id": "pl_1540",
+    "email": "user540@mail.com",
+    "city": "São Paulo",
+    "created_at": "2023-10-13"
+  },
+  {
+    "player_id": "pl_1541",
+    "email": "USER541@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-06-24"
+  },
+  {
+    "player_id": "pl_1542",
+    "email": "user542@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-06-18"
+  },
+  {
+    "player_id": "pl_1543",
+    "email": "user543@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-07-19"
+  },
+  {
+    "player_id": "pl_1544",
+    "email": "user544@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-03-19"
+  },
+  {
+    "player_id": "pl_1545",
+    "email": "user545@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-07-27"
+  },
+  {
+    "player_id": "pl_1546",
+    "email": "USER546@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-01-05"
+  },
+  {
+    "player_id": "pl_1547",
+    "email": "USER547@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-02-03"
+  },
+  {
+    "player_id": "pl_1548",
+    "email": "USER548@MAIL.COM",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-07-03"
+  },
+  {
+    "player_id": "pl_1549",
+    "email": "user549@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-03-16"
+  },
+  {
+    "player_id": "pl_1550",
+    "email": "user550@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-11-22"
+  },
+  {
+    "player_id": "pl_1551",
+    "email": "user551@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-05-31"
+  },
+  {
+    "player_id": "pl_1552",
+    "email": "user552@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-11-04"
+  },
+  {
+    "player_id": "pl_1553",
+    "email": "USER553@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2025-07-22"
+  },
+  {
+    "player_id": "pl_1554",
+    "email": "user554@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-04-13"
+  },
+  {
+    "player_id": "pl_1555",
+    "email": "user555@mail.com",
+    "city": "Curitiba",
+    "created_at": "2023-10-19"
+  },
+  {
+    "player_id": "pl_1556",
+    "email": "user556@mail.com",
+    "city": "Salvador",
+    "created_at": "2023-12-22"
+  },
+  {
+    "player_id": "pl_1557",
+    "email": "user557@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-01-14"
+  },
+  {
+    "player_id": "pl_1558",
+    "email": "user558@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-11-16"
+  },
+  {
+    "player_id": "pl_1559",
+    "email": "user559@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-05-31"
+  },
+  {
+    "player_id": "pl_1560",
+    "email": "user560@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2023-12-23"
+  },
+  {
+    "player_id": "pl_1561",
+    "email": "user561@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-10-05"
+  },
+  {
+    "player_id": "pl_1562",
+    "email": "user562@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-04-10"
+  },
+  {
+    "player_id": "pl_1563",
+    "email": "user563@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-12-30"
+  },
+  {
+    "player_id": "pl_1564",
+    "email": "USER564@MAIL.COM",
+    "city": "Curitiba",
+    "created_at": "2023-12-24"
+  },
+  {
+    "player_id": "pl_1565",
+    "email": "user565@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-09-15"
+  },
+  {
+    "player_id": "pl_1566",
+    "email": "user566@mail.com",
+    "city": "Curitiba",
+    "created_at": "2025-09-30"
+  },
+  {
+    "player_id": "pl_1567",
+    "email": "user567@mail.com",
+    "city": "São Paulo",
+    "created_at": "2026-02-08"
+  },
+  {
+    "player_id": "pl_1568",
+    "email": "user568@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-11-30"
+  },
+  {
+    "player_id": "pl_1569",
+    "email": "user569@mail.com",
+    "city": "Salvador",
+    "created_at": "2024-05-16"
+  },
+  {
+    "player_id": "pl_1570",
+    "email": "user570@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2023-10-30"
+  },
+  {
+    "player_id": "pl_1571",
+    "email": "user571@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-06-09"
+  },
+  {
+    "player_id": "pl_1572",
+    "email": "user572@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2024-11-20"
+  },
+  {
+    "player_id": "pl_1573",
+    "email": "USER573@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2024-05-27"
+  },
+  {
+    "player_id": "pl_1574",
+    "email": "USER574@MAIL.COM",
+    "city": "Porto Alegre",
+    "created_at": "2025-12-07"
+  },
+  {
+    "player_id": "pl_1575",
+    "email": "user575@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-10-11"
+  },
+  {
+    "player_id": "pl_1576",
+    "email": "user576@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-12-30"
+  },
+  {
+    "player_id": "pl_1577",
+    "email": "USER577@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2025-09-01"
+  },
+  {
+    "player_id": "pl_1578",
+    "email": "user578@mail.com",
+    "city": "Salvador",
+    "created_at": "2025-07-27"
+  },
+  {
+    "player_id": "pl_1579",
+    "email": "user579@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-11-30"
+  },
+  {
+    "player_id": "pl_1580",
+    "email": "user580@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-01-19"
+  },
+  {
+    "player_id": "pl_1581",
+    "email": "USER581@MAIL.COM",
+    "city": "São Paulo",
+    "created_at": "2023-10-18"
+  },
+  {
+    "player_id": "pl_1582",
+    "email": "user582@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-04-09"
+  },
+  {
+    "player_id": "pl_1583",
+    "email": "user583@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-10-15"
+  },
+  {
+    "player_id": "pl_1584",
+    "email": "user584@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2023-12-21"
+  },
+  {
+    "player_id": "pl_1585",
+    "email": "user585@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-02-10"
+  },
+  {
+    "player_id": "pl_1586",
+    "email": "user586@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-09-14"
+  },
+  {
+    "player_id": "pl_1587",
+    "email": "user587@mail.com",
+    "city": "São Paulo",
+    "created_at": "2024-02-25"
+  },
+  {
+    "player_id": "pl_1588",
+    "email": "USER588@MAIL.COM",
+    "city": "Salvador",
+    "created_at": "2024-04-28"
+  },
+  {
+    "player_id": "pl_1589",
+    "email": "USER589@MAIL.COM",
+    "city": "Belo Horizonte",
+    "created_at": "2025-05-13"
+  },
+  {
+    "player_id": "pl_1590",
+    "email": "user590@mail.com",
+    "city": "São Paulo",
+    "created_at": "2025-02-26"
+  },
+  {
+    "player_id": "pl_1591",
+    "email": "user591@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-01-27"
+  },
+  {
+    "player_id": "pl_1592",
+    "email": "user592@mail.com",
+    "city": "Salvador",
+    "created_at": "2023-11-30"
+  },
+  {
+    "player_id": "pl_1593",
+    "email": "user593@mail.com",
+    "city": "Porto Alegre",
+    "created_at": "2024-03-13"
+  },
+  {
+    "player_id": "pl_1594",
+    "email": "user594@mail.com",
+    "city": "Curitiba",
+    "created_at": "2024-11-10"
+  },
+  {
+    "player_id": "pl_1595",
+    "email": "user595@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2024-07-20"
+  },
+  {
+    "player_id": "pl_1596",
+    "email": "user596@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2025-12-17"
+  },
+  {
+    "player_id": "pl_1597",
+    "email": "user597@mail.com",
+    "city": "Belo Horizonte",
+    "created_at": "2025-01-01"
+  },
+  {
+    "player_id": "pl_1598",
+    "email": "user598@mail.com",
+    "city": "Rio de Janeiro",
+    "created_at": "2023-11-06"
+  },
+  {
+    "player_id": "pl_1599",
+    "email": "USER599@MAIL.COM",
+    "city": "Porto Alegre",
+    "created_at": "2024-04-10"
+  }
+]

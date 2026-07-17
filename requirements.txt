@@ -1,0 +1,4 @@
+# Runtime dependencies
+pandas>=2.0            # exploration (one-time discovery)
+google-cloud-bigquery>=3.20   # ingestion load
+dbt-bigquery>=1.11     # Bronze/Silver/Gold models

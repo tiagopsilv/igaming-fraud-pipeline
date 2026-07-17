@@ -1,0 +1,25 @@
+# ==============================================================================
+# config.toml - Public pipeline configuration. SAFE TO COMMIT: there are NO secrets here.
+#
+# To run the ingestion against YOUR OWN BigQuery (first-time clone):
+#   1) set [gcp].project to your GCP project id
+#   2) drop your service-account JSON at the path in [gcp].keyfile (that file is gitignored)
+#   3) run:  python ingestion/load_raw.py      (see git_manual/MANUAL_GCP_INGESTAO.md)
+#
+# The exploration scripts (exploration/*.py) do NOT use this file: they read the local
+# sample in data/ and run FULLY OFFLINE - no GCP, no config, works right after cloning.
+#
+# Any value below can be overridden by an environment variable of the same UPPER_SNAKE
+# name (e.g. OTG_GCP_PROJECT=my-proj) - handy for CI or production, without editing code.
+# ==============================================================================
+
+[gcp]
+project  = "otg-igaming-case"          # OTG_GCP_PROJECT  -> change to your own project to run it yourself
+location = "US"                        # OTG_BQ_LOCATION
+keyfile  = "secrets/gcp-keyfile.json"  # OTG_GCP_KEYFILE  -> path only; the JSON itself stays gitignored
+
+[bigquery]
+raw_dataset = "raw"                    # OTG_RAW_DATASET  -> dataset where the raw tables land
+
+[source]
+dir = "data"                           # OTG_SOURCE_DIR   -> local sample folder; in prod, a GCS landing bucket

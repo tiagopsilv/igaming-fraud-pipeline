@@ -1,0 +1,6 @@
+{
+  "extraPaths": ["ingestion"],
+  "typeCheckingMode": "basic",
+  "reportAttributeAccessIssue": "none",
+  "reportImplicitStringConcatenation": "none"
+}

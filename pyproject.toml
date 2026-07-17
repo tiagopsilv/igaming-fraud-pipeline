@@ -1,0 +1,10 @@
+[tool.pytest.ini_options]
+# Put ingestion/ on sys.path so tests can `import load_raw` without any path hacks.
+pythonpath = ["ingestion"]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+# data/ holds the sample dataset and its generator - kept as-is, not linted.
+extend-exclude = ["data"]
