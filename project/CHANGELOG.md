@@ -5,6 +5,30 @@ Milestones delivered and findings made, newest first. Format inspired by
 
 ## [Unreleased]
 
+### 2026-07-17 - Silver intermediate models (dbt) + tests
+**Added**
+- Seven Silver **`int_` models** (`dbt/models/intermediate/`, materialized as tables): `int_players_conformed`
+  (email lowercased), `int_player_first_deposit` (real FTD), `int_player_qualified_ftd` (deposit + bet
+  baseline, ADR-0011), `int_player_affiliate_attribution` (one affiliate per qualified player, ADR-0004),
+  `int_player_financials` and `int_player_activity` (reusable per-player rollups), and **`int_player_ledger`**
+  (the wallet running balance - reconciliation building block).
+- The **test suite**: structural tests (`unique`/`not_null`/`relationships`) pass; business-rule
+  data-quality tests (funnel logic `ftd <= registrations`, no transaction before signup, and **ledger
+  integrity** - no money-out before funding) run as warnings, surfacing the synthetic sample's
+  inconsistencies (344 / 139 / 344 / 372) instead of failing the build.
+- Built and tested against BigQuery: `dbt build` green (`ERROR=0`).
+
+### 2026-07-17 - Silver discovery (dbt-native) + qualified FTD
+**Added**
+- `analyses/silver_discovery.sql` - a version-controlled dbt **analysis** that works out the Silver
+  layer's job directly on the **real BigQuery data** (run with `dbt show`): email normalization,
+  referential integrity, the real and qualified first deposit, and the logical impossibilities to test.
+
+**Discovered / decided**
+- The **qualified FTD** ([ADR-0011](decisions/0011-attribution-gates-on-qualified-ftd.md)): the glossary
+  pays CPA for a deposit **plus** a baseline bet, not any deposit. On the real data, of 379 depositors
+  only **227 qualify** (baseline 50), so attribution gates on the qualified FTD - refining ADR-0004.
+
 ### 2026-07-17 - Bronze staging models (dbt) + tests
 **Added**
 - The dbt project (`dbt/`): `dbt_project.yml`, `profiles.yml` (env-driven, no secrets), `packages.yml`.

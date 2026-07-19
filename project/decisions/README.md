@@ -29,3 +29,5 @@ considered, and the consequences. They follow a lightweight
 | [0008](0008-load-strategy-per-source.md) | Load strategy per source (frequency, full/incremental, control field) | Accepted |
 | [0009](0009-non-functional-requirements.md) | Non-functional requirements (freshness, quality, cost, reliability SLOs) | Accepted |
 | [0010](0010-bronze-staging-conventions.md) | Bronze staging conventions (SAFE_CAST, per-source parse, sources + tests, boundary) | Accepted |
+| [0011](0011-attribution-gates-on-qualified-ftd.md) | Attribution gates on the qualified FTD (deposit + bet baseline) | Accepted |
+| [0012](0012-silver-intermediate-conventions.md) | Silver intermediate conventions and the wallet ledger | Accepted |

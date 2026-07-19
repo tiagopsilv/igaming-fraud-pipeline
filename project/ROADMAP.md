@@ -46,7 +46,12 @@ The build then runs layer by layer, each with its conventions locked first.
     column, fixing `amount` that autodetect typed FLOAT to NUMERIC; view materialization) with their test
     suite (unique/not_null, accepted_values, non-negative, no-future, not-null-after-cast) plus source
     freshness. Built test-first and passing against BigQuery (`dbt build`, 39 checks green). ADR-0010.
-  - **Silver** (conform, real FTD, attribution, data-quality) → **Gold** star schema.
+  - ✅ **Silver intermediate** (`dbt/models/intermediate/`): seven `int_` models (conformed player,
+    real + qualified FTD [ADR-0011], affiliate attribution, per-player financials, activity, and the
+    **wallet ledger** with a running balance). Structural tests pass; the business-rule data-quality
+    tests (funnel logic, no transaction before signup, ledger integrity) surface the sample's
+    inconsistencies as warnings. Built test-first, passing against BigQuery (`dbt build`).
+  - **Gold** star schema (dims + facts + `fct_fraud_signals`).
 - **R2 - Fraud signals** in `fct_fraud_signals`: multi-accounting, AML low-play, affiliate ghost-FTD.
 
 ## ⬜ Phase 3 - Orchestrate, serve & harden

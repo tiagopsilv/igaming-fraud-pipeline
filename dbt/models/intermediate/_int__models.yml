@@ -1,0 +1,154 @@
+version: 2
+
+# Silver intermediate tests. Structural/integrity tests are `error` (they hold on this data).
+# The business-rule data-quality tests are singular tests set to `severity: warn` (in tests/):
+# the synthetic sample violates them by design, so they SURFACE the count instead of failing the
+# build - in production they would error. That contrast is the point (they catch real inconsistencies).
+
+models:
+  - name: int_players_conformed
+    description: "Silver: conformed player (email lowercased). Grain: one player."
+    columns:
+      - name: player_id
+        description: "Natural key. One row per player."
+        tests: [unique, not_null]
+      - name: email
+        description: "Lowercased email (normalization, not dedup: 600 distinct before and after)."
+        tests: [not_null]
+      - name: city
+        description: "Registration city (passed through from Bronze)."
+      - name: created_at
+        description: "Registration date (DATE)."
+
+  - name: int_player_first_deposit
+    description: "Silver: the real first deposit (FTD) per depositing player, from transactions."
+    columns:
+      - name: player_id
+        description: "One row per player who has at least one deposit."
+        tests: [unique, not_null]
+      - name: first_deposit_ts
+        description: "MIN deposit timestamp = the real FTD (ground truth, ADR-0004)."
+        tests: [not_null]
+      - name: deposit_count
+        description: "Number of deposit transactions for the player."
+      - name: total_deposits
+        description: "Sum of deposit amounts (NUMERIC)."
+
+  - name: int_player_qualified_ftd
+    description: "Silver: qualified FTD (deposit + total bets >= baseline var, ADR-0011). Grain: one depositor."
+    columns:
+      - name: player_id
+        description: "One row per depositor."
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('int_player_first_deposit')
+                field: player_id
+      - name: first_deposit_ts
+        description: "The real FTD timestamp (carried from int_player_first_deposit)."
+      - name: total_bets
+        description: "Sum of the player's bet amounts (0 if none)."
+      - name: is_qualified
+        description: "TRUE when total bets >= the baseline var (the CPA-earning condition)."
+        tests: [not_null]
+
+  - name: int_player_affiliate_attribution
+    description: "Silver: one affiliate per qualified player (ADR-0004/0011). Grain: one attributed player."
+    columns:
+      - name: player_id
+        description: "The qualified player being credited to an affiliate."
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('int_player_qualified_ftd')
+                field: player_id
+      - name: affiliate_id
+        description: "The credited affiliate (the CPA owner), chosen by the claim-FTD tiebreak."
+        tests: [not_null]
+      - name: acquisition_country
+        description: "Country of the attributed affiliate row (an acquisition attribute, not an affiliate one)."
+      - name: cpa_value
+        description: "The CPA amount owed for this acquisition (NUMERIC)."
+
+  - name: int_player_financials
+    description: "Silver: per-player financial rollup (net deposit, bet_ratio). Reusable building block."
+    columns:
+      - name: player_id
+        description: "One row per player who has any transaction."
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('int_players_conformed')
+                field: player_id
+      - name: total_deposits
+        description: "Sum of deposits (NUMERIC)."
+      - name: total_withdrawals
+        description: "Sum of withdrawals (NUMERIC)."
+      - name: total_bets
+        description: "Sum of bets (NUMERIC)."
+      - name: net_deposit
+        description: "total_deposits - total_withdrawals (the glossary's Net Deposit)."
+      - name: bet_ratio
+        description: "total_bets / total_deposits (AML low-play input; NULL if no deposits)."
+      - name: n_deposits
+        description: "Count of deposit transactions."
+      - name: n_withdrawals
+        description: "Count of withdrawal transactions."
+      - name: n_bets
+        description: "Count of bet transactions."
+
+  - name: int_player_activity
+    description: "Silver: per-player activity rollup (IPs, devices, span). Reusable building block."
+    columns:
+      - name: player_id
+        description: "One row per player who has any session."
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('int_players_conformed')
+                field: player_id
+      - name: session_count
+        description: "Number of sessions."
+      - name: distinct_ips
+        description: "Distinct IPs used (IP-velocity / multi-accounting input)."
+      - name: distinct_devices
+        description: "Distinct devices used."
+      - name: first_session_ts
+        description: "First session timestamp."
+      - name: last_session_ts
+        description: "Last session timestamp."
+      - name: active_span_days
+        description: "Days between first and last session (dormancy input)."
+
+  - name: int_player_ledger
+    description: "Silver: the wallet ledger - running balance per transaction (reconciliation building block)."
+    columns:
+      - name: transaction_id
+        description: "One row per transaction (the ledger grain)."
+        tests: [unique, not_null]
+      - name: player_id
+        description: "The player whose wallet this entry belongs to."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('int_players_conformed')
+                field: player_id
+      - name: txn_ts
+        description: "Transaction timestamp (the ledger order key)."
+      - name: transaction_type
+        description: "deposit / withdraw / bet."
+      - name: amount
+        description: "Transaction amount (NUMERIC, always positive)."
+      - name: signed_amount
+        description: "Cash flow: +amount for deposit, -amount for withdraw/bet."
+      - name: running_balance
+        description: "Cumulative signed_amount per player over time. Should never go negative (see the ledger test)."

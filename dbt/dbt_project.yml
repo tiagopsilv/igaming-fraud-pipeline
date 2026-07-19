@@ -17,8 +17,15 @@ clean-targets:
   - "target"
   - "dbt_packages"
 
-# Materialization per Medallion layer (ADR-0001): Bronze staging = views.
+# Project variables. The qualified-FTD baseline is a parametrizable business premise (ADR-0011):
+# in production the operator sets the real bet baseline.
+vars:
+  qualified_ftd_baseline: 50
+
+# Materialization per Medallion layer (ADR-0001): Bronze staging = views, Silver = tables.
 models:
   igaming_fraud_pipeline:
     staging:
       +materialized: view
+    intermediate:
+      +materialized: table
