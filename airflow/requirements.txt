@@ -1,0 +1,5 @@
+# Airflow-environment packages (dbt itself is installed in dbt_venv by the Dockerfile).
+# Cosmos renders the dbt project as Airflow tasks; the Google provider supplies the
+# BigQuery connection type used by the gcp_bigquery connection.
+astronomer-cosmos==1.8.2
+apache-airflow-providers-google

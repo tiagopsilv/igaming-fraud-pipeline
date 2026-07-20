@@ -1,0 +1,7 @@
+.astro
+dbt_venv
+include/dbt/target
+include/dbt/dbt_packages
+include/dbt/logs
+include/secrets
+**/__pycache__

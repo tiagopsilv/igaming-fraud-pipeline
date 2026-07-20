@@ -26,7 +26,7 @@ cd dbt && dbt deps && dbt build --profiles-dir .   # Bronze + Silver models + te
 | ID | Deliverable | Status |
 |----|-------------|--------|
 | E1 | Architecture diagram | ✅ done (`docs/architecture.md`) |
-| E2 | Airflow DAG (ingest → transform → refresh) | ⬜ next |
+| E2 | Airflow DAG (ingest → transform → refresh) | ✅ built + **validated running** (`astro dev start`): 38 tasks green end-to-end, retries + alert confirmed (ADR-0015) |
 | E3 | dbt models - Bronze / Silver / Gold | ✅ done (all three layers built + tested) |
 | E4 | Load-strategy table | ✅ done (ADR-0008) |
 | E5 | Power BI dashboard (Fraud / Affiliate / Financial) | ⬜ next (Gold serving layer ready, ADR-0014) |
@@ -72,4 +72,5 @@ Legend: ✅ done · 🟡 in progress · ⬜ next
 [0011 attribution gates on qualified FTD](decisions/0011-attribution-gates-on-qualified-ftd.md) ·
 [0012 Silver intermediate conventions & the ledger](decisions/0012-silver-intermediate-conventions.md) ·
 [0013 Gold fraud signals & risk score](decisions/0013-gold-fraud-signals-risk-score.md) ·
-[0014 Gold serving model for Power BI](decisions/0014-gold-serving-model-for-power-bi.md)
+[0014 Gold serving model for Power BI](decisions/0014-gold-serving-model-for-power-bi.md) ·
+[0015 orchestration with Airflow + Cosmos](decisions/0015-orchestration-airflow-cosmos.md)

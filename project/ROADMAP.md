@@ -60,8 +60,12 @@ The build then runs layer by layer, each with its conventions locked first.
   velocity, ledger anomaly, net-negative) combined into a **risk score**, plus five secondary flags,
   each with a value at risk. [ADR-0013](decisions/0013-gold-fraud-signals-risk-score.md).
 
-## ⬜ Phase 3 - Orchestrate, serve & harden
-- **E2 - Airflow DAG** (Cosmos): ingest → dbt build → publish.
+## 🔵 Phase 3 - Orchestrate, serve & harden
+- ✅ **E2 - Airflow DAG** (Cosmos): the `airflow/` Astro project and the DAG
+  (`ingest_raw → dbt_source_freshness → transform` as a **`DbtTaskGroup`**), with retries, a webhook
+  failure alert and no secrets in code. **Validated running** via `astro dev start`: all 38 tasks green
+  end-to-end (ingest → freshness → 36 dbt run/test), 0 failures.
+  [ADR-0015](decisions/0015-orchestration-airflow-cosmos.md).
 - **R1 - Observability**: source freshness, row-count/volume, schema drift, anomaly monitors.
 - **E5 - Power BI dashboard**: Fraud Overview / Affiliate Metrics / Financial Signals.
 - CI (GitHub Actions: `pytest` + `ruff` + `dbt build`), quickstart docs, end-to-end clean-environment run.

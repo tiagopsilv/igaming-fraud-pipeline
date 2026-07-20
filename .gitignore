@@ -24,8 +24,15 @@ logs/
 .user.yml
 
 # --- Airflow / Astro ---
-airflow/.astro/
+airflow/.astro/*
+!airflow/.astro/config.yaml
 airflow/logs/
+airflow/dbt_venv/
+airflow/include/dbt/
+airflow/include/ingestion/
+airflow/include/data/
+airflow/include/config.toml
+airflow/include/secrets/
 airflow_settings.yaml
 
 # --- Ingestion (generated NDJSON staging, not committed) ---

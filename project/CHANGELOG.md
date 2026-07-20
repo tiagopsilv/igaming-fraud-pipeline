@@ -5,6 +5,25 @@ Milestones delivered and findings made, newest first. Format inspired by
 
 ## [Unreleased]
 
+### 2026-07-20 - Airflow orchestration (Astro + Cosmos), deliverable E2
+**Added**
+- The `airflow/` Astro project and the DAG `dags/igaming_fraud_pipeline_dag.py`:
+  `dbt_deps -> ingest_raw -> dbt_source_freshness -> transform`, where the transform is a Cosmos
+  **`DbtTaskGroup`** (every model and test is its own Airflow task - lineage and retries at model grain).
+- Credentials via the Airflow `gcp_bigquery` connection (no secrets in code); retries + a best-effort
+  webhook failure alert; the dbt project is synced into the image from the single source at `dbt/`.
+
+**Decided** ([ADR-0015](decisions/0015-orchestration-airflow-cosmos.md))
+- Orchestrate with a Cosmos `DbtTaskGroup` over an opaque `BashOperator dbt build`; run dbt from an
+  isolated virtualenv, pinned to the **1.11 line** (the version the project is tested with, and the one
+  Cosmos' command form targets); a `dbt_deps` task installs the packages at runtime so the DAG runs on a
+  clean clone.
+
+**Verified**
+- `astro dev start`: **all tasks green end-to-end** (`dbt_deps -> ingest -> freshness -> the 36 dbt
+  run/test tasks`, Bronze -> Silver -> Gold), 0 failures - confirmed on a fresh clone (no pre-installed
+  packages) and re-run for idempotency; retries and the webhook alert exercised.
+
 ### 2026-07-20 - Test suite: dbt unit tests + business-rule consistency tests
 **Added**
 - **dbt unit tests** (`_int__unit_tests.yml`, `_gold__unit_tests.yml`) - six tests that validate the

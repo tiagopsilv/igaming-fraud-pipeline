@@ -1,0 +1,1 @@
+# OS-level packages for the Airflow image (none needed beyond the base). Kept for the Astro layout.

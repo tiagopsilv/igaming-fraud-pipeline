@@ -33,3 +33,4 @@ considered, and the consequences. They follow a lightweight
 | [0012](0012-silver-intermediate-conventions.md) | Silver intermediate conventions and the wallet ledger | Accepted |
 | [0013](0013-gold-fraud-signals-risk-score.md) | Gold fraud signals and the multi-signal risk score (R2) | Accepted |
 | [0014](0014-gold-serving-model-for-power-bi.md) | Gold serving model for Power BI (star schema, Import mode) | Accepted |
+| [0015](0015-orchestration-airflow-cosmos.md) | Orchestrate the pipeline with Airflow + Astronomer Cosmos | Accepted |
