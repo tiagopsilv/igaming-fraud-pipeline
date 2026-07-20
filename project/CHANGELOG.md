@@ -5,7 +5,39 @@ Milestones delivered and findings made, newest first. Format inspired by
 
 ## [Unreleased]
 
-### 2026-07-20 - Airflow orchestration (Astro + Cosmos), deliverable E2
+### 2026-07-20 - SQL linting with sqlfluff (code quality)
+**Added**
+- `dbt/.sqlfluff` + `.sqlfluffignore`: SQLFluff config (BigQuery dialect, dbt templater, the project's
+  lowercase style). `sqlfluff fix` applied across every model and test - one consistent SQL style.
+- Three rules relaxed **with a documented reason**: `references.qualification` (noisy on single-table CTEs),
+  `structure.using` (USING joins are deliberate), `ST06` (would reorder columns away from the contract yml),
+  and `references.keywords` (raw sources carry keyword column names like `type`/`timestamp`).
+- `sqlfluff lint` is clean (0 violations); `dbt build` re-run confirms the formatting changed no logic.
+  Added `sqlfluff` + `sqlfluff-templater-dbt` to `requirements-dev.txt`.
+
+### 2026-07-20 - Observability instrumented with Elementary
+**Added**
+- The **Elementary** dbt package ([ADR-0016](decisions/0016-observability-with-elementary.md)): `on-run-end`
+  hooks log every model run and test result to an `analytics_elementary` schema, plus monitoring tests -
+  `schema_changes` (drift) on all four sources and `volume_anomalies` on `transactions`/`sessions`.
+- Turns ADR-0009's *identified* observability points into *instrumented* monitors. `dbt build` green with
+  Elementary logging (190 run results, 105 test results captured).
+
+### 2026-07-20 - Power BI dashboard
+**Added**
+- `dashboard/igaming_fraud_dashboard.pbix` - a Power BI report over the Gold star schema (Import mode,
+  ADR-0014): four pages (Fraud Overview, Acquisition & Retention, Affiliate Metrics, Financial Signals) with
+  KPI cards, an investigation table with data bars, the 10 fraud signals, and month-over-month retention, on
+  a custom light/neutral theme. Risk is communicated by a categorical `risk_tier` label
+  (Critical/High/Medium/Low/No alert), not colour alone (accessibility).
+- `docs/dashboard.md` - the design system, the four-page layout with each visual and its measure, and the
+  reasoning. README gains a **Limitations** section (NGR/GGR/RevShare are not computable from the sources;
+  Real Revenue is stated as Net Deposit).
+- `risk_tier` and `is_one_and_done` are computed in the Gold layer (dbt), keeping the business logic in one
+  tested place; the report reads them as columns. Measures map to the business glossary terms (qualified FTD,
+  CPA, net deposit, ROI).
+
+### 2026-07-20 - Airflow orchestration (Astro + Cosmos)
 **Added**
 - The `airflow/` Astro project and the DAG `dags/igaming_fraud_pipeline_dag.py`:
   `dbt_deps -> ingest_raw -> dbt_source_freshness -> transform`, where the transform is a Cosmos
@@ -46,7 +78,7 @@ Milestones delivered and findings made, newest first. Format inspired by
   - Facts: `fct_transactions` (incremental **merge** on `transaction_id`, carries the wallet running
     balance from the Silver ledger) and `fct_sessions` (incremental **insert_overwrite** by day).
   - `fct_fraud_signals` - per player: 5 core signals + a multi-signal **risk score** + 5 secondary
-    flags + `value_at_risk` (R2). `agg_affiliate_performance` - CPA owed, real revenue, ROI, ghost-FTD.
+    flags + `value_at_risk`. `agg_affiliate_performance` - CPA owed, real revenue, ROI, ghost-FTD.
 - **Enforced model contracts** on every mart (the public serving layer) and a **dbt exposure**
   (`fraud_dashboard`) linking the marts to the Power BI report for end-to-end lineage - both adopted
   after benchmarking the layout against dbt's own structure guidance.
@@ -65,7 +97,7 @@ Milestones delivered and findings made, newest first. Format inspired by
   into a per-player **risk score**, with `value_at_risk`. The high-confidence set (score >= 2) is 362
   players, R$826k at risk. Five **secondary** signals cover the rest of the catalog (structuring, geo
   conflict, device takeover, registration velocity, dormant reactivation) as logic-ready flags, out of the
-  score. Materialized in `fct_fraud_signals` (R2).
+  score. Materialized in `fct_fraud_signals`.
 - **Power BI serving** ([ADR-0014](decisions/0014-gold-serving-model-for-power-bi.md)): a star schema in
   **Import mode** - conformed `dim_player`/`dim_affiliate`/`dim_date`, facts (`fct_transactions` carrying
   the ledger balance, `fct_sessions`), and the marts (`fct_fraud_signals`, `agg_affiliate_performance`)
@@ -121,7 +153,7 @@ Milestones delivered and findings made, newest first. Format inspired by
 
 ### 2026-07-17 - Architecture diagram + source-to-target mapping
 **Added**
-- `docs/architecture.md` - the **E1** architecture diagram (Mermaid C4 / data-flow: sources →
+- `docs/architecture.md` - the architecture diagram (Mermaid C4 / data-flow: sources →
   ingestion → Bronze → Silver → Gold → Power BI, orchestrated by Airflow).
 - `docs/source_to_target_mapping.md` - how each source column maps to a modeled column and the rule
   that transforms it, tracing back to the decisions (ADR-0004/0005/0006/0007/0008).
@@ -137,9 +169,9 @@ Milestones delivered and findings made, newest first. Format inspired by
   `amount > 0` at 100%, `ftd ≤ registrations` at 83%, no-tx-before-`created_at` at 81%) sets the
   quality SLOs; and the ~0.9 MB volume keeps cost inside the BigQuery free tier ($0).
 
-### 2026-07-17 - Load strategy (E4)
+### 2026-07-17 - Load strategy
 **Delivered**
-- The load-strategy table (deliverable **E4**), locked as **ADR-0008**: per source, its frequency,
+- The load-strategy table, locked as **ADR-0008**: per source, its frequency,
   full vs incremental, control field, and rationale.
 
 **Discovered (decides full vs incremental)**

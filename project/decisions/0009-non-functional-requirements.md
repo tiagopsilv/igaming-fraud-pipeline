@@ -31,6 +31,6 @@ it delivers most of the value of streaming at a fraction of the cost - real-time
 
 ## Consequences
 - The quality SLOs become dbt tests that **fail the pipeline** on violation (Silver/Gold); the
-  freshness SLOs become source-freshness + monitoring checks (observability, R1).
+  freshness SLOs become source-freshness + monitoring checks (observability).
 - The cost guardrails (`require_partition_filter`, `maximum_bytes_billed`) prevent accidental full scans.
 - Targets are realistic because they start from the measured baseline, not an aspiration.

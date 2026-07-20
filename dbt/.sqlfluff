@@ -1,0 +1,41 @@
+# SQLFluff config for the dbt project. Dialect BigQuery, dbt templater (so ref()/macros resolve),
+# and the project's existing lowercase style (dbt's own SQL style guide). Run from this folder:
+#   sqlfluff lint models tests
+#   sqlfluff fix  models tests
+[sqlfluff]
+templater = dbt
+dialect = bigquery
+max_line_length = 120
+# Rules intentionally relaxed (documented): column qualification is noisy on single-table CTEs;
+# USING joins are deliberate (cleaner than ON when the key matches); ST06 would reorder SELECT
+# columns, which fights the intentional order that matches each model's contract yml.
+exclude_rules = references.qualification, structure.using, ST06, references.keywords
+# references.keywords (RF04): the raw sources carry keyword column names (`type`, `timestamp`) we
+# cannot rename at source, and the date dimension uses the natural `year`/`month`/`day` names.
+
+[sqlfluff:templater:dbt]
+project_dir = ./
+profiles_dir = ./
+
+[sqlfluff:indentation]
+tab_space_size = 4
+indent_unit = space
+
+# Lowercase keywords/functions/identifiers - matches the models and dbt's style guide.
+[sqlfluff:rules:capitalisation.keywords]
+capitalisation_policy = lower
+
+[sqlfluff:rules:capitalisation.functions]
+extended_capitalisation_policy = lower
+
+[sqlfluff:rules:capitalisation.identifiers]
+extended_capitalisation_policy = lower
+
+[sqlfluff:rules:capitalisation.literals]
+capitalisation_policy = lower
+
+[sqlfluff:rules:capitalisation.types]
+extended_capitalisation_policy = lower
+
+[sqlfluff:layout:type:comma]
+line_position = trailing

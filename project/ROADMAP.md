@@ -23,17 +23,17 @@ Each phase also **deepens the fraud, risk and data-quality analysis** as more of
   See [ADR-0005](decisions/0005-raw-ingestion-idempotent-ndjson.md).
 - **Discovery:** the ingestion-readiness pass caught that the sources are CRLF (the loader writes LF).
 
-## 🔵 Phase 2 - Modeling (now)
+## ✅ Phase 2 - Modeling
 Build the Medallion models against the decisions above.
 - ✅ Data contract locked ([ADR-0006](decisions/0006-data-contract-and-assumptions.md)): grain per
   table, UTC timezone, and "account" = `player_id` (fraud signals are designed later, in the Gold layer).
 - ✅ Gold star schema & physical design ([ADR-0007](decisions/0007-gold-star-schema-and-physical-design.md)):
   dimensions, facts, partition-by-date + cluster-by-`player_id`, and materialization per layer.
-- ✅ **E4 - load-strategy table** ([ADR-0008](decisions/0008-load-strategy-per-source.md)): per source,
+- ✅ **Load-strategy table** ([ADR-0008](decisions/0008-load-strategy-per-source.md)): per source,
   frequency × full/incremental × control field × rationale.
 - ✅ **Non-functional requirements** ([ADR-0009](decisions/0009-non-functional-requirements.md)):
   freshness / quality / cost / reliability SLOs, derived from a measured baseline.
-- ✅ **E1 - architecture diagram** (`docs/architecture.md`, C4 / data-flow) and the
+- ✅ **Architecture diagram** (`docs/architecture.md`, C4 / data-flow) and the
   **source-to-target mapping** (`docs/source_to_target_mapping.md`).
 
 The architecture is now fully specified (contract, star schema, load strategy, NFRs, diagram, STTM).
@@ -41,7 +41,7 @@ The build then runs layer by layer, each with its conventions locked first.
 - ✅ **Bronze staging conventions** ([ADR-0010](decisions/0010-bronze-staging-conventions.md)):
   `SAFE_CAST` on every typed column (autodetect had mistyped `amount` as FLOAT), sources + freshness,
   and the structural test suite (unique/not_null, accepted_values, non-negative, no-future, not-null-after-cast).
-- 🔵 **E3 - dbt models** (in progress):
+- ✅ **dbt models**:
   - ✅ **Bronze staging** (`dbt/models/staging/`): the four `stg_` models (`SAFE_CAST` on every typed
     column, fixing `amount` that autodetect typed FLOAT to NUMERIC; view materialization) with their test
     suite (unique/not_null, accepted_values, non-negative, no-future, not-null-after-cast) plus source
@@ -56,19 +56,23 @@ The build then runs layer by layer, each with its conventions locked first.
     `fct_sessions` (incremental **insert_overwrite**), **`fct_fraud_signals`** and
     `agg_affiliate_performance`. Every mart has an **enforced contract**; a **dbt exposure** links them
     to the Power BI dashboard. `dbt build` green; incremental idempotency proven. ADR-0007/0013/0014.
-- ✅ **R2 - Fraud signals** in `fct_fraud_signals`: five core (affiliate ghost-FTD, AML low-play, IP
+- ✅ **Fraud signals** in `fct_fraud_signals`: five core (affiliate ghost-FTD, AML low-play, IP
   velocity, ledger anomaly, net-negative) combined into a **risk score**, plus five secondary flags,
   each with a value at risk. [ADR-0013](decisions/0013-gold-fraud-signals-risk-score.md).
 
-## 🔵 Phase 3 - Orchestrate, serve & harden
-- ✅ **E2 - Airflow DAG** (Cosmos): the `airflow/` Astro project and the DAG
+## ✅ Phase 3 - Orchestrate, serve & harden
+- ✅ **Airflow DAG** (Cosmos): the `airflow/` Astro project and the DAG
   (`ingest_raw → dbt_source_freshness → transform` as a **`DbtTaskGroup`**), with retries, a webhook
   failure alert and no secrets in code. **Validated running** via `astro dev start`: all 38 tasks green
   end-to-end (ingest → freshness → 36 dbt run/test), 0 failures.
   [ADR-0015](decisions/0015-orchestration-airflow-cosmos.md).
-- **R1 - Observability**: source freshness, row-count/volume, schema drift, anomaly monitors.
-- **E5 - Power BI dashboard**: Fraud Overview / Affiliate Metrics / Financial Signals.
-- CI (GitHub Actions: `pytest` + `ruff` + `dbt build`), quickstart docs, end-to-end clean-environment run.
+- ✅ **Observability**: instrumented with **Elementary** (run/test logging + `schema_changes` drift
+  monitor on the sources + `volume_anomalies` on the high-volume events), on top of source freshness.
+  [ADR-0016](decisions/0016-observability-with-elementary.md).
+- ✅ **Power BI dashboard**: `dashboard/igaming_fraud_dashboard.pbix` - four pages (Fraud Overview /
+  Acquisition & Retention / Affiliate Metrics / Financial Signals) over the Gold marts (Import mode,
+  ADR-0014). The design, layout and reasoning are in [docs/dashboard.md](../docs/dashboard.md).
+- ⬜ Optional next: CI (GitHub Actions: `pytest` + `ruff` + `dbt build`), quickstart docs, clean-environment run.
 
 ---
 

@@ -8,7 +8,7 @@
   players). The Fraud Overview KPIs come from `gold_fraud_signal_scan` (ADR-0013).
 
 ## Context
-The dashboard (**E5**) needs three panels: **Fraud Overview**, **Affiliate Metrics**, **Financial
+The dashboard needs three panels: **Fraud Overview**, **Affiliate Metrics**, **Financial
 Signals**. Power BI's VertiPaq engine is optimized for a **star schema** and **Import mode**; the Gold
 must serve exactly that, so the report is fast, consistent and offline-demoable.
 

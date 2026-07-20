@@ -1,4 +1,4 @@
-# ADR-0013 - Gold fraud signals and the multi-signal risk score (R2)
+# ADR-0013 - Gold fraud signals and the multi-signal risk score
 
 - **Status:** Accepted
 - **Date:** 2026-07-19
@@ -11,7 +11,7 @@
   reactivation (114).
 
 ## Context
-The case requires at least two fraud signals in the Gold layer (**R2**), each with an SQL rule and a
+The Gold layer surfaces multiple fraud signals, each with an SQL rule and a
 value at risk. Market practice is to combine several signals into a single **risk score** rather than
 relying on any one - this cuts false positives and gives an interpretable audit trail.
 

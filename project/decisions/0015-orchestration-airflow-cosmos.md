@@ -8,7 +8,7 @@
   which render dbt as a Cosmos task group rather than a single shell call.
 
 ## Context
-Deliverable **E2** requires an Airflow DAG that orchestrates ingestion, transformation and model refresh,
+An Airflow DAG orchestrates ingestion, transformation and model refresh,
 with retries and a failure alert. The transformation is a dbt project; the decision is *how* Airflow
 invokes dbt.
 
@@ -17,7 +17,7 @@ Orchestrate with **Airflow (Astro Runtime) + Astronomer Cosmos**, one DAG:
 `ingest_raw -> dbt_source_freshness -> transform (DbtTaskGroup) `.
 1. **Cosmos `DbtTaskGroup`** renders each dbt model and test as its *own* Airflow task
    (`TestBehavior.AFTER_EACH`), instead of a single opaque `dbt build`. This gives per-model lineage in
-   the UI, retries at model grain, and tests as first-class tasks - the observability the case rewards.
+   the UI, retries at model grain, and tests as first-class tasks - first-class observability.
 2. **dbt runs in an isolated virtualenv** (`ExecutionConfig` -> `dbt_venv`), so dbt's and Airflow's
    dependency trees never clash (the recommended Cosmos pattern).
 3. **`LoadMode.AUTOMATIC`**: parse the DAG from a pre-built manifest when present (fast, no `dbt ls` at
@@ -31,7 +31,7 @@ Orchestrate with **Airflow (Astro Runtime) + Astronomer Cosmos**, one DAG:
 ## Alternatives considered
 - **BashOperator `dbt build`** - one task, no per-model visibility, retries re-run everything. Rejected:
   loses the lineage/observability that is half the point of orchestrating.
-- **KubernetesPodOperator per dbt run** - production-scale isolation, but heavy for this case and no
+- **KubernetesPodOperator per dbt run** - production-scale isolation, but heavy for this scale and no
   local reproducibility. Deferred as a scale path.
 - **dbt Cloud** - not the assigned stack (Airflow + dbt Core).
 

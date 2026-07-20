@@ -1,4 +1,4 @@
-# ADR-0008 - Load strategy per source (E4)
+# ADR-0008 - Load strategy per source
 
 - **Status:** Accepted
 - **Date:** 2026-07-17
@@ -8,7 +8,7 @@
   at all** (no watermark). Those facts decide full vs incremental.
 
 ## Context
-The case requires a load-strategy definition per source - frequency × full/incremental × control
+The load strategy is defined per source - frequency × full/incremental × control
 field × justification. The strategy must follow what each source's data can actually support, not a
 one-size rule.
 

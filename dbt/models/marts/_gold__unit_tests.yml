@@ -50,10 +50,12 @@ unit_tests:
       rows:
         - {player_id: p_clean, s_ghost_ftd: false, s_aml_low_play: false, s_ip_velocity: false,
            s_ledger_anomaly: false, s_net_negative: false, s_structuring: false, s_geo_conflict: false,
-           s_device_takeover: false, s_reg_velocity: false, s_dormant: false, value_at_risk: 20, risk_score: 0}
+           s_device_takeover: false, s_reg_velocity: false, s_dormant: false, value_at_risk: 20, risk_score: 0,
+           risk_tier: "No alert"}
         - {player_id: p_bad, s_ghost_ftd: true, s_aml_low_play: false, s_ip_velocity: false,
            s_ledger_anomaly: false, s_net_negative: true, s_structuring: false, s_geo_conflict: false,
-           s_device_takeover: false, s_reg_velocity: false, s_dormant: false, value_at_risk: 100, risk_score: 2}
+           s_device_takeover: false, s_reg_velocity: false, s_dormant: false, value_at_risk: 100, risk_score: 2,
+           risk_tier: "Medium"}
 
   # Affiliate performance: ROI = revenue / CPA; ghost-FTD counts claims that never qualified.
   - name: ut_affiliate_roi_and_ghost_count

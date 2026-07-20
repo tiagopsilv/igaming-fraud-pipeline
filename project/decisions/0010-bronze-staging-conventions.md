@@ -22,7 +22,7 @@ joins, no aggregations, no business logic.
 2. **`SAFE_CAST` every typed column** (do not trust autodetect): `amount` and `cpa_value` -> **NUMERIC**
    (autodetect typed `amount` FLOAT and `cpa_value` INTEGER - money must be NUMERIC), `clicks`/
    `registrations`/`ftd` -> **INT64**, `created_at` -> **DATE**, event timestamps -> **TIMESTAMP** (UTC).
-   `SAFE_CAST(x AS TIMESTAMP)` is robust whether autodetect gave TIMESTAMP (a no-op) or a STRING (it
+   `SAFE_CAST(x AS TIMESTAMP)` is safe whether autodetect gave TIMESTAMP (a no-op) or a STRING (it
    parses), and `SAFE_CAST` turns any bad value into NULL-and-flagged instead of failing the whole load.
 3. **Rename** to target names: `type` -> `transaction_type`, `timestamp` -> `txn_ts` / `session_ts`;
    everything else is already snake_case. The audit columns (`_ingested_at`, `_source_file`) pass through.

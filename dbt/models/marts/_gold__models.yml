@@ -78,6 +78,10 @@ models:
       - name: acquisition_country
         data_type: string
         description: "Country of the acquired player (per-player, not an affiliate attribute; ADR-0006)."
+      - name: is_one_and_done
+        data_type: bool
+        description: "True if the player made exactly one deposit and never returned (glossary one-and-done)."
+        tests: [not_null]
 
   - name: dim_affiliate
     description: "Gold: affiliate dimension (ADR-0007). Grain: one affiliate, descriptive attributes only."
@@ -244,6 +248,14 @@ models:
               arguments:
                 min_value: 0
                 max_value: 5
+      - name: risk_tier
+        data_type: string
+        description: "Categorical risk label bucketed from risk_score in Gold (Critical/High/Medium/Low/No alert)."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['Critical', 'High', 'Medium', 'Low', 'No alert']
 
   - name: agg_affiliate_performance
     description: "Gold: per-affiliate acquisition performance (ADR-0014). Grain: one affiliate."

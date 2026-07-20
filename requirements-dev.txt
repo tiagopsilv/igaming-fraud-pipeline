@@ -1,5 +1,7 @@
 # Development dependencies (tests + code quality)
 -r requirements.txt
 pytest>=8.0
-ruff>=0.6
+ruff>=0.6                    # Python linter/formatter
+sqlfluff>=3.0               # SQL linter/formatter (config in dbt/.sqlfluff)
+sqlfluff-templater-dbt      # lets sqlfluff resolve dbt Jinja (ref/macros) before linting
 pandas-stubs>=2.0   # type stubs so the editor/type-checker understands pandas

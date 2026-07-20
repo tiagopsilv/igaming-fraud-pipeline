@@ -6,22 +6,43 @@
 with players as (
     select * from {{ ref('int_players_conformed') }}
 ),
+
 qualified as (
-    select player_id, first_deposit_ts, is_qualified from {{ ref('int_player_qualified_ftd') }}
+    select
+        player_id,
+        first_deposit_ts,
+        is_qualified
+    from {{ ref('int_player_qualified_ftd') }}
 ),
+
 attribution as (
-    select player_id, affiliate_id, acquisition_country from {{ ref('int_player_affiliate_attribution') }}
+    select
+        player_id,
+        affiliate_id,
+        acquisition_country
+    from {{ ref('int_player_affiliate_attribution') }}
+),
+
+fin as (
+    select
+        player_id,
+        n_deposits
+    from {{ ref('int_player_financials') }}
 )
 
 select
     p.player_id,
     p.email,
     p.city,
-    p.created_at                               as registered_at,
-    coalesce(q.is_qualified, false)            as is_qualified_ftd,
+    p.created_at as registered_at,
+    coalesce(q.is_qualified, false) as is_qualified_ftd,
     q.first_deposit_ts,
-    a.affiliate_id                             as acquisition_affiliate_id,
-    a.acquisition_country
-from players p
-left join qualified   q using (player_id)
-left join attribution a using (player_id)
+    a.affiliate_id as acquisition_affiliate_id,
+    a.acquisition_country,
+    -- one-and-done: deposited exactly once, never returned (glossary). Computed in Gold,
+    -- not DAX, so it is a reusable, tested flag on the player row.
+    coalesce(f.n_deposits, 0) = 1 as is_one_and_done
+from players as p
+left join qualified as q using (player_id)
+left join attribution as a using (player_id)
+left join fin as f using (player_id)

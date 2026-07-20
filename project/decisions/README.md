@@ -31,6 +31,7 @@ considered, and the consequences. They follow a lightweight
 | [0010](0010-bronze-staging-conventions.md) | Bronze staging conventions (SAFE_CAST, per-source parse, sources + tests, boundary) | Accepted |
 | [0011](0011-attribution-gates-on-qualified-ftd.md) | Attribution gates on the qualified FTD (deposit + bet baseline) | Accepted |
 | [0012](0012-silver-intermediate-conventions.md) | Silver intermediate conventions and the wallet ledger | Accepted |
-| [0013](0013-gold-fraud-signals-risk-score.md) | Gold fraud signals and the multi-signal risk score (R2) | Accepted |
+| [0013](0013-gold-fraud-signals-risk-score.md) | Gold fraud signals and the multi-signal risk score | Accepted |
 | [0014](0014-gold-serving-model-for-power-bi.md) | Gold serving model for Power BI (star schema, Import mode) | Accepted |
 | [0015](0015-orchestration-airflow-cosmos.md) | Orchestrate the pipeline with Airflow + Astronomer Cosmos | Accepted |
+| [0016](0016-observability-with-elementary.md) | Observability instrumented with Elementary | Accepted |

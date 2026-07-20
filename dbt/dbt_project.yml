@@ -33,3 +33,8 @@ models:
     # event facts are incremental (config in-model: transactions=merge, sessions=insert_overwrite).
     marts:
       +materialized: table
+
+  # Observability (ADR-0009): Elementary logs every run/test result to its own schema, turning
+  # freshness, volume, schema-drift and anomaly monitoring into queryable data + an HTML report.
+  elementary:
+    +schema: elementary

@@ -16,29 +16,44 @@ sources:
         error_after: {count: 48, period: hour}
     tables:
       - name: players
+        # Elementary schema-drift monitor: fails if a column is added/removed/retyped (ADR-0009).
+        tests:
+          - elementary.schema_changes
         columns:
           - name: player_id
             tests: [unique, not_null]
       - name: sessions
-        # High-volume event: tighter freshness (ADR-0009 sessions <= 1h).
+        # High-volume event: tighter freshness (ADR-0009 sessions <= 1h) + drift + volume anomaly.
         config:
           freshness:
             warn_after: {count: 1, period: hour}
             error_after: {count: 2, period: hour}
+        tests:
+          - elementary.schema_changes
+          - elementary.volume_anomalies:
+              arguments:
+                timestamp_column: _ingested_at
         columns:
           - name: session_id
             tests: [unique, not_null]
       - name: transactions
-        # Financial event: tighter freshness (ADR-0009 transactions <= 1h).
+        # Financial event: tighter freshness (ADR-0009 transactions <= 1h) + drift + volume anomaly.
         config:
           freshness:
             warn_after: {count: 1, period: hour}
             error_after: {count: 2, period: hour}
+        tests:
+          - elementary.schema_changes
+          - elementary.volume_anomalies:
+              arguments:
+                timestamp_column: _ingested_at
         columns:
           - name: transaction_id
             tests: [unique, not_null]
       - name: affiliate_cpa_ftd
         description: "Restated aggregate; conflated grain (no primary key, ADR-0006)."
+        tests:
+          - elementary.schema_changes
         columns:
           - name: affiliate_id
             tests: [not_null]

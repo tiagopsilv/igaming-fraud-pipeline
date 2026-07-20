@@ -2,7 +2,7 @@
 
 **Project:** iGaming fraud-detection data pipeline - Medallion architecture (BigQuery + dbt + Airflow) feeding a Power BI dashboard.
 **Goal:** ingest four heterogeneous sources (JSON/CSV), model them in Bronze/Silver/Gold, and surface fraud signals plus affiliate and financial metrics.
-**Status:** 🟡 In progress - foundation, architecture, ingestion and the full **Bronze + Silver + Gold** dbt layers delivered (star schema, fraud signals, contracts, exposure); the Airflow DAG and the Power BI dashboard next.
+**Status:** ✅ Complete - all deliverables built: the architecture, the Airflow DAG (validated end-to-end), the full **Bronze + Silver + Gold** dbt layers (star schema, fraud signals, contracts, exposure), the load-strategy table, and the Power BI dashboard, plus observability and the fraud-signal layer.
 **Last updated:** 2026-07-20
 
 > Single source of truth for progress:
@@ -19,19 +19,19 @@ Airflow (Astronomer Cosmos) · dbt · Google BigQuery · Power BI · Python. Loc
 python exploration/explore_sources.py    # data discovery (offline)
 python ingestion/load_raw.py             # land the sources into BigQuery (git_manual/MANUAL_GCP_INGESTAO.md)
 pytest tests/ -q                         # unit tests
-cd dbt && dbt deps && dbt build --profiles-dir .   # Bronze + Silver models + tests (git_manual/MANUAL_DBT_BRONZE.md)
+cd dbt && dbt deps && dbt build --profiles-dir .   # Bronze + Silver + Gold models + tests
 ```
 
 ## Deliverables & progress
-| ID | Deliverable | Status |
-|----|-------------|--------|
-| E1 | Architecture diagram | ✅ done (`docs/architecture.md`) |
-| E2 | Airflow DAG (ingest → transform → refresh) | ✅ built + **validated running** (`astro dev start`): 38 tasks green end-to-end, retries + alert confirmed (ADR-0015) |
-| E3 | dbt models - Bronze / Silver / Gold | ✅ done (all three layers built + tested) |
-| E4 | Load-strategy table | ✅ done (ADR-0008) |
-| E5 | Power BI dashboard (Fraud / Affiliate / Financial) | ⬜ next (Gold serving layer ready, ADR-0014) |
-| R1 | Observability points | ⬜ next |
-| R2 | ≥ 2 fraud signals in the Gold layer | ✅ done (`fct_fraud_signals`: 5 core + 5 secondary) |
+| Deliverable | Status |
+|-------------|--------|
+| Architecture diagram | ✅ done (`docs/architecture.md`) |
+| Airflow DAG (ingest → transform → refresh) | ✅ built + **validated running** (`astro dev start`): 38 tasks green end-to-end, retries + alert confirmed (ADR-0015) |
+| dbt models - Bronze / Silver / Gold | ✅ done (all three layers built + tested) |
+| Load-strategy table | ✅ done (ADR-0008) |
+| Power BI dashboard (Fraud / Acquisition / Affiliate / Financial) | ✅ done (`dashboard/igaming_fraud_dashboard.pbix`: four pages over the Gold marts; design in `docs/dashboard.md`) |
+| Observability points | ✅ instrumented (Elementary: run/test logging + schema-drift + volume anomaly monitors, ADR-0016) |
+| ≥ 2 fraud signals in the Gold layer | ✅ done (`fct_fraud_signals`: 5 core + 5 secondary) |
 
 Legend: ✅ done · 🟡 in progress · ⬜ next
 
