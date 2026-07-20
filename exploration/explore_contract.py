@@ -1,5 +1,5 @@
 # ==============================================================================
-# explore_contract.py - Detective work for the DATA CONTRACT (A2): the assumptions
+# explore_contract.py - Discovery for the DATA CONTRACT (A2): the assumptions
 # that bind everything - grain per table, timezone, and the definitions of
 # "account" and "fraud". Each answer becomes a documented assumption. Fully offline.
 # Run:  python exploration/explore_contract.py

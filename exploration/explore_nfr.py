@@ -1,5 +1,5 @@
 # ==============================================================================
-# explore_nfr.py - Detective work for the NON-FUNCTIONAL REQUIREMENTS: derive the
+# explore_nfr.py - Discovery for the NON-FUNCTIONAL REQUIREMENTS: derive the
 # targets FROM the data. Freshness (from timestamp granularity), data-quality SLOs
 # (from the measured baseline of the hard rules) and cost (from the volume).
 # Best practice: set targets from a measured baseline, not from a wish. Offline.

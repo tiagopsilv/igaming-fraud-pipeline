@@ -1,5 +1,5 @@
 # ==============================================================================
-# explore_staging.py - Detective: what did the load ACTUALLY produce, and what
+# explore_staging.py - Discovery: what did the load ACTUALLY produce, and what
 # must the stg_ layer fix? The raw is already in BigQuery, and its types are
 # whatever autodetect inferred from the string content - which you CANNOT predict
 # (it typed money as FLOAT). So Q1-Q2 query the REAL raw schema; Q3-Q5 measure the

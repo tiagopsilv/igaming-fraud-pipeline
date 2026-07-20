@@ -2,8 +2,8 @@
 
 **Project:** iGaming fraud-detection data pipeline - Medallion architecture (BigQuery + dbt + Airflow) feeding a Power BI dashboard.
 **Goal:** ingest four heterogeneous sources (JSON/CSV), model them in Bronze/Silver/Gold, and surface fraud signals plus affiliate and financial metrics.
-**Status:** 🟡 In progress - foundation, discovery, architecture and ingestion delivered; modeling the Medallion layers now.
-**Last updated:** 2026-07-17
+**Status:** 🟡 In progress - foundation, architecture, ingestion and the full **Bronze + Silver + Gold** dbt layers delivered (star schema, fraud signals, contracts, exposure); the Airflow DAG and the Power BI dashboard next.
+**Last updated:** 2026-07-20
 
 > Single source of truth for progress:
 > - **`ROADMAP.md`** - the phased plan.
@@ -19,7 +19,7 @@ Airflow (Astronomer Cosmos) · dbt · Google BigQuery · Power BI · Python. Loc
 python exploration/explore_sources.py    # data discovery (offline)
 python ingestion/load_raw.py             # land the sources into BigQuery (git_manual/MANUAL_GCP_INGESTAO.md)
 pytest tests/ -q                         # unit tests
-cd dbt && dbt deps && dbt build --profiles-dir . --select staging   # Bronze models + tests (git_manual/MANUAL_DBT_BRONZE.md)
+cd dbt && dbt deps && dbt build --profiles-dir .   # Bronze + Silver models + tests (git_manual/MANUAL_DBT_BRONZE.md)
 ```
 
 ## Deliverables & progress
@@ -27,11 +27,11 @@ cd dbt && dbt deps && dbt build --profiles-dir . --select staging   # Bronze mod
 |----|-------------|--------|
 | E1 | Architecture diagram | ✅ done (`docs/architecture.md`) |
 | E2 | Airflow DAG (ingest → transform → refresh) | ⬜ next |
-| E3 | dbt models - Bronze / Silver / Gold | 🟡 in progress (Bronze + Silver done; Gold next) |
+| E3 | dbt models - Bronze / Silver / Gold | ✅ done (all three layers built + tested) |
 | E4 | Load-strategy table | ✅ done (ADR-0008) |
-| E5 | Power BI dashboard (Fraud / Affiliate / Financial) | ⬜ next |
+| E5 | Power BI dashboard (Fraud / Affiliate / Financial) | ⬜ next (Gold serving layer ready, ADR-0014) |
 | R1 | Observability points | ⬜ next |
-| R2 | ≥ 2 fraud signals in the Gold layer | 🟡 designed |
+| R2 | ≥ 2 fraud signals in the Gold layer | ✅ done (`fct_fraud_signals`: 5 core + 5 secondary) |
 
 Legend: ✅ done · 🟡 in progress · ⬜ next
 
@@ -46,6 +46,17 @@ Legend: ✅ done · 🟡 in progress · ⬜ next
 - Silver intermediate (`dbt/`): seven `int_` models (conformed player, real + qualified FTD, affiliate
   attribution, per-player financials, activity, and the wallet **ledger** with running balance).
   Structural tests pass; the business-rule DQ tests surface the sample's inconsistencies as warnings.
+- Gold marts (`dbt/models/marts/`): the star schema - `dim_player` (SCD-1), `dim_affiliate`, `dim_date`,
+  `fct_transactions` (incremental **merge**, carries the ledger balance), `fct_sessions` (incremental
+  **insert_overwrite**), **`fct_fraud_signals`** (5 core signals + risk score + 5 secondary flags) and
+  `agg_affiliate_performance` (CPA / ROI / ghost-FTD). Every mart has an **enforced model contract**;
+  a **dbt exposure** ties them to the Power BI dashboard for end-to-end lineage. `dbt build` green,
+  incremental idempotency proven on a second run (ADR-0007/0013/0014).
+- Test suite: **dbt unit tests** validate the business logic (qualified-FTD baseline, attribution,
+  Net Deposit, ledger balance, the fraud risk score, affiliate ROI) on static fixtures; **business-rule
+  consistency tests** confirm the modeled layers hold on the real data (ledger reconciles, risk score
+  matches its flags, no player dropped, CPA only for qualified). Full `dbt build`: **125 pass, 0 error**
+  (4 warnings are the intended Silver `severity: warn` checks on the raw sample).
 
 ## Key decisions
 [ADR-0001 Medallion](decisions/0001-medallion-architecture.md) ·
@@ -59,4 +70,6 @@ Legend: ✅ done · 🟡 in progress · ⬜ next
 [0009 non-functional requirements](decisions/0009-non-functional-requirements.md) ·
 [0010 Bronze staging conventions](decisions/0010-bronze-staging-conventions.md) ·
 [0011 attribution gates on qualified FTD](decisions/0011-attribution-gates-on-qualified-ftd.md) ·
-[0012 Silver intermediate conventions & the ledger](decisions/0012-silver-intermediate-conventions.md)
+[0012 Silver intermediate conventions & the ledger](decisions/0012-silver-intermediate-conventions.md) ·
+[0013 Gold fraud signals & risk score](decisions/0013-gold-fraud-signals-risk-score.md) ·
+[0014 Gold serving model for Power BI](decisions/0014-gold-serving-model-for-power-bi.md)

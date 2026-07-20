@@ -1,0 +1,28 @@
+version: 2
+
+# Exposures declare where the Gold marts are ultimately consumed - the Power BI dashboard
+# (deliverable E5). They give end-to-end lineage (source -> Bronze -> Silver -> Gold ->
+# dashboard) in `dbt docs`, and impact analysis: `dbt build -s +exposure:fraud_dashboard`
+# rebuilds exactly what the dashboard depends on.
+
+exposures:
+  - name: fraud_dashboard
+    label: "iGaming Fraud & Performance Dashboard"
+    type: dashboard
+    maturity: high
+    url: https://app.powerbi.com/
+    description: >
+      The Power BI report (Import mode over the Gold star schema). Three panels:
+      Fraud Overview (suspicious accounts, value at risk, risk score),
+      Affiliate Metrics (CPA, ROI, qualified vs ghost FTDs),
+      Financial Signals (deposits/withdrawals, net deposit, low-play).
+    depends_on:
+      - ref('fct_fraud_signals')
+      - ref('agg_affiliate_performance')
+      - ref('fct_transactions')
+      - ref('fct_sessions')
+      - ref('dim_player')
+      - ref('dim_affiliate')
+      - ref('dim_date')
+    owner:
+      name: Data Engineering

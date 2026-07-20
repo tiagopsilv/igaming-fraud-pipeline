@@ -1,0 +1,279 @@
+version: 2
+
+# Gold marts (ADR-0007/0013/0014). These are the PUBLIC serving layer consumed by Power BI,
+# so each carries an ENFORCED model contract: the build fails if a column is dropped, renamed
+# or retyped, guaranteeing the schema the dashboard imports. Keys are unique/not_null; facts
+# point back to the conformed dimensions (relationships); ranges guard the score and money.
+
+models:
+  - name: dim_date
+    description: "Gold: conformed date spine covering the real event range. Grain: one day."
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: date_day
+        data_type: date
+        description: "The calendar day. Primary key of the dimension."
+        tests: [unique, not_null]
+      - name: year
+        data_type: int64
+        description: "Calendar year."
+      - name: quarter
+        data_type: int64
+        description: "Calendar quarter (1-4)."
+      - name: month
+        data_type: int64
+        description: "Calendar month (1-12)."
+      - name: day
+        data_type: int64
+        description: "Day of month."
+      - name: day_of_week
+        data_type: int64
+        description: "Day of week (1=Sunday)."
+      - name: day_name
+        data_type: string
+        description: "Weekday name."
+      - name: year_month
+        data_type: string
+        description: "YYYY-MM label for month-grain slicing in Power BI."
+        tests: [not_null]
+      - name: is_weekend
+        data_type: bool
+        description: "True on Saturday/Sunday."
+
+  - name: dim_player
+    description: "Gold: player dimension (SCD-1, ADR-0003). Grain: one player, current attributes."
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: player_id
+        data_type: string
+        description: "Natural key. One row per player."
+        tests: [unique, not_null]
+      - name: email
+        data_type: string
+        description: "Conformed (lowercased) email."
+        tests: [not_null]
+      - name: city
+        data_type: string
+        description: "Registration city."
+      - name: registered_at
+        data_type: date
+        description: "Registration date."
+      - name: is_qualified_ftd
+        data_type: bool
+        description: "True if the player deposited AND bet the baseline (ADR-0011)."
+        tests: [not_null]
+      - name: first_deposit_ts
+        data_type: timestamp
+        description: "Timestamp of the real first deposit (nullable if never deposited)."
+      - name: acquisition_affiliate_id
+        data_type: string
+        description: "The affiliate credited with the qualified acquisition (nullable if unattributed)."
+        tests:
+          - relationships:
+              arguments:
+                to: ref('dim_affiliate')
+                field: affiliate_id
+      - name: acquisition_country
+        data_type: string
+        description: "Country of the acquired player (per-player, not an affiliate attribute; ADR-0006)."
+
+  - name: dim_affiliate
+    description: "Gold: affiliate dimension (ADR-0007). Grain: one affiliate, descriptive attributes only."
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: affiliate_id
+        data_type: string
+        description: "Natural key. One row per affiliate."
+        tests: [unique, not_null]
+      - name: n_players_claimed
+        data_type: int64
+        description: "Distinct players this affiliate claimed."
+      - name: n_acquisition_countries
+        data_type: int64
+        description: "Distinct countries the affiliate acquired in."
+      - name: primary_country
+        data_type: string
+        description: "The affiliate's most frequent acquisition country."
+        tests:
+          - accepted_values:
+              arguments:
+                values: ['AR', 'BR', 'CL', 'CO', 'MX']
+
+  - name: fct_transactions
+    description: "Gold: transaction fact with the wallet running balance (ADR-0012). Incremental MERGE (ADR-0008)."
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: transaction_id
+        data_type: string
+        description: "Natural key. One row per transaction."
+        tests: [unique, not_null]
+      - name: player_id
+        data_type: string
+        description: "FK to dim_player."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_player')
+                field: player_id
+      - name: txn_ts
+        data_type: timestamp
+        description: "Transaction timestamp (UTC)."
+      - name: txn_date
+        data_type: date
+        description: "Partition key (date of txn_ts)."
+      - name: transaction_type
+        data_type: string
+        description: "deposit / withdraw / bet."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['deposit', 'withdraw', 'bet']
+      - name: amount
+        data_type: numeric
+        description: "Money amount."
+        tests: [not_null]
+      - name: signed_amount
+        data_type: numeric
+        description: "+ for deposits, - for withdraw/bet (ledger convention)."
+      - name: running_balance
+        data_type: numeric
+        description: "Wallet balance after this transaction, in time order (Silver ledger)."
+        tests: [not_null]
+
+  - name: fct_sessions
+    description: "Gold: session fact (ip/device per access). Incremental INSERT_OVERWRITE by day (ADR-0008)."
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: session_id
+        data_type: string
+        description: "Natural key. One row per session."
+        tests: [unique, not_null]
+      - name: player_id
+        data_type: string
+        description: "FK to dim_player."
+        tests:
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_player')
+                field: player_id
+      - name: ip
+        data_type: string
+        description: "Session IP address (fraud signal input)."
+      - name: device
+        data_type: string
+        description: "Device type (degenerate dimension)."
+        tests:
+          - not_null
+          - accepted_values:
+              arguments:
+                values: ['android', 'desktop', 'ios']
+      - name: session_ts
+        data_type: timestamp
+        description: "Session timestamp (UTC)."
+      - name: session_date
+        data_type: date
+        description: "Partition key (date of session_ts)."
+
+  - name: fct_fraud_signals
+    description: "Gold: per-player fraud profile - 5 core signals + risk score + 5 secondary flags (ADR-0013)."
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: player_id
+        data_type: string
+        description: "Natural key + FK to dim_player. One row per player."
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_player')
+                field: player_id
+      - name: s_ghost_ftd
+        data_type: bool
+        description: "CORE: affiliate claimed an FTD for a player who never qualified."
+      - name: s_aml_low_play
+        data_type: bool
+        description: "CORE: bet_ratio < 0.2 and withdrew (deposit, barely bet, cash out)."
+      - name: s_ip_velocity
+        data_type: bool
+        description: "CORE: > 10 distinct IPs (VPN/bot)."
+      - name: s_ledger_anomaly
+        data_type: bool
+        description: "CORE: money-out before the first deposit (reconciliation red flag)."
+      - name: s_net_negative
+        data_type: bool
+        description: "CORE: withdrew more than deposited."
+      - name: s_structuring
+        data_type: bool
+        description: "SECONDARY: >= 3 round deposits."
+      - name: s_geo_conflict
+        data_type: bool
+        description: "SECONDARY: tagged under > 1 acquisition country."
+      - name: s_device_takeover
+        data_type: bool
+        description: "SECONDARY: >= 3 distinct devices."
+      - name: s_reg_velocity
+        data_type: bool
+        description: "SECONDARY: registered on a burst day (top decile)."
+      - name: s_dormant
+        data_type: bool
+        description: "SECONDARY: active span > 60 days."
+      - name: value_at_risk
+        data_type: numeric
+        description: "Money exposed (total withdrawals). Never negative."
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              arguments:
+                min_value: 0
+      - name: risk_score
+        data_type: int64
+        description: "Count of CORE signals tripped (0-5). >= 2 is the high-confidence set."
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              arguments:
+                min_value: 0
+                max_value: 5
+
+  - name: agg_affiliate_performance
+    description: "Gold: per-affiliate acquisition performance (ADR-0014). Grain: one affiliate."
+    config:
+      contract: {enforced: true}
+    columns:
+      - name: affiliate_id
+        data_type: string
+        description: "Natural key + FK to dim_affiliate."
+        tests:
+          - unique
+          - not_null
+          - relationships:
+              arguments:
+                to: ref('dim_affiliate')
+                field: affiliate_id
+      - name: qualified_ftds
+        data_type: int64
+        description: "Qualified players credited to this affiliate."
+        tests: [not_null]
+      - name: cpa_owed
+        data_type: numeric
+        description: "CPA payable on those qualified FTDs."
+      - name: real_revenue
+        data_type: numeric
+        description: "Net deposit of the attributed players (honest revenue proxy; NGR/GGR need data the source lacks)."
+      - name: roi
+        data_type: numeric
+        description: "real_revenue / cpa_owed."
+      - name: ghost_ftds
+        data_type: int64
+        description: "FTDs claimed but never qualified (acquisition-fraud signal)."
+        tests: [not_null]

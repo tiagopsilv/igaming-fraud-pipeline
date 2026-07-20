@@ -29,3 +29,7 @@ models:
       +materialized: view
     intermediate:
       +materialized: table
+    # Gold marts = star schema (ADR-0007). Dimensions/aggregates as tables; the two
+    # event facts are incremental (config in-model: transactions=merge, sessions=insert_overwrite).
+    marts:
+      +materialized: table

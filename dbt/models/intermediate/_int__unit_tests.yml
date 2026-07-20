@@ -1,0 +1,74 @@
+version: 2
+
+# Unit tests (dbt 1.8+): validate the BUSINESS LOGIC of each Silver model against static, controlled
+# inputs - independent of the real data. They encode the glossary/case rules as executable examples,
+# so a future change that breaks a rule fails the build. (Data tests check the data; unit tests check
+# the code.) Run in dev/CI with `dbt build` or `dbt test --select test_type:unit`.
+
+unit_tests:
+  # Glossary "FTD Qualificado": a player qualifies only if they deposited AND bet >= the baseline (50).
+  - name: ut_qualified_ftd_respects_baseline
+    model: int_player_qualified_ftd
+    description: "A bet at/above the baseline qualifies; below it does not (glossary FTD Qualificado)."
+    given:
+      - input: ref('int_player_first_deposit')
+        rows:
+          - {player_id: pA, first_deposit_ts: "2024-01-01 10:00:00", deposit_count: 1, total_deposits: 100}
+          - {player_id: pB, first_deposit_ts: "2024-01-01 10:00:00", deposit_count: 1, total_deposits: 100}
+      - input: ref('stg_transactions')
+        rows:
+          - {player_id: pA, transaction_type: bet, amount: 60}   # 60 >= 50  -> qualifies
+          - {player_id: pB, transaction_type: bet, amount: 10}   # 10 <  50  -> does not
+    expect:
+      rows:
+        - {player_id: pA, first_deposit_ts: "2024-01-01 10:00:00", total_bets: 60, is_qualified: true}
+        - {player_id: pB, first_deposit_ts: "2024-01-01 10:00:00", total_bets: 10, is_qualified: false}
+
+  # CPA is paid for a QUALIFIED FTD only, and exactly one affiliate wins (highest cpa_value, then lowest id).
+  - name: ut_attribution_qualified_and_single_winner
+    model: int_player_affiliate_attribution
+    description: "Only qualified players earn CPA; the highest-cpa affiliate wins the tiebreak (ADR-0004/0011)."
+    given:
+      - input: ref('int_player_qualified_ftd')
+        rows:
+          - {player_id: p1, is_qualified: true}
+          - {player_id: p2, is_qualified: false}   # not qualified -> excluded entirely
+      - input: ref('stg_affiliate_cpa_ftd')
+        rows:
+          - {player_id: p1, affiliate_id: a1, country: BR, ftd: 1, cpa_value: 30}
+          - {player_id: p1, affiliate_id: a2, country: AR, ftd: 1, cpa_value: 50}   # higher cpa -> wins
+          - {player_id: p2, affiliate_id: a3, country: BR, ftd: 1, cpa_value: 20}
+    expect:
+      rows:
+        - {player_id: p1, affiliate_id: a2, acquisition_country: AR, cpa_value: 50}
+
+  # Glossary "Net Deposit" = deposits - withdrawals; bet_ratio = bets / deposits.
+  - name: ut_financials_net_deposit_and_bet_ratio
+    model: int_player_financials
+    description: "Net deposit = deposits - withdrawals; bet_ratio = bets / deposits (glossary Net Deposit)."
+    given:
+      - input: ref('stg_transactions')
+        rows:
+          - {player_id: p1, transaction_type: deposit,  amount: 100}
+          - {player_id: p1, transaction_type: withdraw, amount: 30}
+          - {player_id: p1, transaction_type: bet,      amount: 40}
+    expect:
+      rows:
+        - {player_id: p1, total_deposits: 100, total_withdrawals: 30, total_bets: 40,
+           net_deposit: 70, bet_ratio: 0.4, n_deposits: 1, n_withdrawals: 1, n_bets: 1}
+
+  # Wallet ledger: running balance is the time-ordered cumulative of signed amounts (deposit +, else -).
+  - name: ut_ledger_running_balance
+    model: int_player_ledger
+    description: "Running balance = cumulative signed amount in time order (reconciliation, ADR-0012)."
+    given:
+      - input: ref('stg_transactions')
+        rows:
+          - {transaction_id: t1, player_id: p1, txn_ts: "2024-01-01 10:00:00", transaction_type: deposit,  amount: 100}
+          - {transaction_id: t2, player_id: p1, txn_ts: "2024-01-01 11:00:00", transaction_type: bet,      amount: 40}
+          - {transaction_id: t3, player_id: p1, txn_ts: "2024-01-01 12:00:00", transaction_type: withdraw, amount: 20}
+    expect:
+      rows:
+        - {transaction_id: t1, player_id: p1, txn_ts: "2024-01-01 10:00:00", transaction_type: deposit,  amount: 100, signed_amount: 100,  running_balance: 100}
+        - {transaction_id: t2, player_id: p1, txn_ts: "2024-01-01 11:00:00", transaction_type: bet,      amount: 40,  signed_amount: -40,  running_balance: 60}
+        - {transaction_id: t3, player_id: p1, txn_ts: "2024-01-01 12:00:00", transaction_type: withdraw, amount: 20,  signed_amount: -20,  running_balance: 40}

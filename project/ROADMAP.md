@@ -51,8 +51,14 @@ The build then runs layer by layer, each with its conventions locked first.
     **wallet ledger** with a running balance). Structural tests pass; the business-rule data-quality
     tests (funnel logic, no transaction before signup, ledger integrity) surface the sample's
     inconsistencies as warnings. Built test-first, passing against BigQuery (`dbt build`).
-  - **Gold** star schema (dims + facts + `fct_fraud_signals`).
-- **R2 - Fraud signals** in `fct_fraud_signals`: multi-accounting, AML low-play, affiliate ghost-FTD.
+  - ✅ **Gold marts** (`dbt/models/marts/`): the star schema - `dim_player` (SCD-1), `dim_affiliate`,
+    `dim_date`, `fct_transactions` (incremental **merge**, carries the ledger running balance),
+    `fct_sessions` (incremental **insert_overwrite**), **`fct_fraud_signals`** and
+    `agg_affiliate_performance`. Every mart has an **enforced contract**; a **dbt exposure** links them
+    to the Power BI dashboard. `dbt build` green; incremental idempotency proven. ADR-0007/0013/0014.
+- ✅ **R2 - Fraud signals** in `fct_fraud_signals`: five core (affiliate ghost-FTD, AML low-play, IP
+  velocity, ledger anomaly, net-negative) combined into a **risk score**, plus five secondary flags,
+  each with a value at risk. [ADR-0013](decisions/0013-gold-fraud-signals-risk-score.md).
 
 ## ⬜ Phase 3 - Orchestrate, serve & harden
 - **E2 - Airflow DAG** (Cosmos): ingest → dbt build → publish.
@@ -65,7 +71,7 @@ The build then runs layer by layer, each with its conventions locked first.
 ## Fraud, risk & quality grow with the pipeline
 Findings emerge progressively; each layer is a chance to surface new risk and fraud as it is built.
 The method is consistent throughout:
-1. **Explore** the layer (a detective pass over what it must handle).
+1. **Explore** the layer (an investigative pass over what it must handle).
 2. **Record** any decision it settles as an evidence-based **ADR**.
 3. **Enforce** the findings where they belong: recurring assertions become **dbt tests**, ongoing
    profiling becomes **observability**, and format handling lives in **ingestion / Bronze**.

@@ -1,5 +1,5 @@
 # ==============================================================================
-# explore_ingestion.py - Detective work: what must the ingestion layer handle?
+# explore_ingestion.py - Discovery: what must the ingestion layer handle?
 #
 # Before trusting a loader, hunt for everything that could break a load into
 # BigQuery. Each question raises the next; the conclusion points every finding to

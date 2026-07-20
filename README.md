@@ -4,8 +4,10 @@ A data pipeline that ingests four heterogeneous sources (JSON/CSV), models them 
 **Medallion architecture** (Bronze → Silver → Gold) on **BigQuery** with **dbt**, orchestrated by
 **Airflow**, and serves fraud signals plus affiliate and financial metrics to a **Power BI** dashboard.
 
-**Status:** 🟡 In progress - foundation, data discovery, architecture and the ingestion layer are
-delivered; the Medallion models are being built next. The phased plan is in **[project/ROADMAP.md](project/ROADMAP.md)**.
+**Status:** 🟡 In progress - foundation, architecture, ingestion, and the full **Bronze + Silver + Gold**
+dbt layers are delivered (star schema, fraud signals, model contracts, dbt exposure, unit + data tests);
+the Airflow DAG and the Power BI dashboard are next. The phased plan is in
+**[project/ROADMAP.md](project/ROADMAP.md)**.
 
 ## The problem
 An operator receives data on user acquisition (affiliates), player behavior (sessions), and money
@@ -20,7 +22,7 @@ Airflow (Astronomer Cosmos) · dbt · Google BigQuery · Power BI · Python. Loc
 data/            # synthetic source sample (for reproducibility; production lands in GCS)
 config.toml      # public pipeline configuration (env-overridable; no secrets)
 ingestion/       # land the sources into BigQuery - NDJSON + audit columns + idempotent load
-dbt/             # dbt project: Bronze staging models + tests (Silver/Gold next)
+dbt/             # dbt project: Bronze + Silver + Gold models + unit/data tests (Airflow + Power BI next)
 exploration/     # one-time discovery scripts (profiling + architecture analysis)
 docs/            # architecture diagram (E1) + source-to-target mapping (STTM)
 tests/           # unit tests (pytest)

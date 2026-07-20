@@ -28,7 +28,7 @@ to hunt for new risks and fraud patterns.
   investigation of quality and coherence.
 - **`arch_discovery.py`** - Kimball questions that shape the star schema (grain, dimensions, SCD, fan-out).
 - **`compare_attribution.py`** - compares affiliate attribution rules; the basis of ADR-0004.
-- **`explore_ingestion.py`** - detective pass over what the ingestion must handle (encoding, CRLF,
+- **`explore_ingestion.py`** - discovery pass over what the ingestion must handle (encoding, CRLF,
   embedded newlines, nesting, column-name validity, volume); the basis of ADR-0005.
 - **`explore_contract.py`** - the data contract: grain per table, timezone, and the definitions of
   "account" and "fraud"; the basis of ADR-0006.

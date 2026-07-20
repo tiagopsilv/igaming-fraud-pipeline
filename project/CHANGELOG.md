@@ -5,6 +5,53 @@ Milestones delivered and findings made, newest first. Format inspired by
 
 ## [Unreleased]
 
+### 2026-07-20 - Test suite: dbt unit tests + business-rule consistency tests
+**Added**
+- **dbt unit tests** (`_int__unit_tests.yml`, `_gold__unit_tests.yml`) - six tests that validate the
+  transformation LOGIC on static fixtures, encoding the glossary/case rules as executable examples:
+  qualified-FTD baseline, single-winner attribution, Net Deposit / bet_ratio, the wallet running
+  balance, the fraud **risk score** (a ghost-FTD + net-negative player scores 2), and affiliate ROI /
+  ghost counting. They test the code, independent of the warehouse data (dbt best practice: unit tests
+  for logic + data tests for data).
+- **Business-rule consistency tests** (singular, ERROR severity) on the real data: the Gold running
+  balance reconciles with the ledger, `risk_score` equals the count of core flags, every player has a
+  fraud profile (nothing dropped), qualified FTDs have a deposit + baseline bets, and CPA is credited
+  only for qualified players. All green - no hidden inconsistency survives in the modeled layers.
+- Full suite: `dbt build` **PASS=125, ERROR=0**; the 4 warnings are the intended Silver `severity: warn`
+  checks that surface the synthetic sample's raw inconsistencies.
+
+### 2026-07-20 - Gold marts built (star schema + fraud signals + contracts + exposure)
+**Added**
+- The Gold layer (`dbt/models/marts/`), implementing ADR-0007/0013/0014:
+  - Dimensions: `dim_player` (SCD-1), `dim_affiliate`, `dim_date` (data-driven spine).
+  - Facts: `fct_transactions` (incremental **merge** on `transaction_id`, carries the wallet running
+    balance from the Silver ledger) and `fct_sessions` (incremental **insert_overwrite** by day).
+  - `fct_fraud_signals` - per player: 5 core signals + a multi-signal **risk score** + 5 secondary
+    flags + `value_at_risk` (R2). `agg_affiliate_performance` - CPA owed, real revenue, ROI, ghost-FTD.
+- **Enforced model contracts** on every mart (the public serving layer) and a **dbt exposure**
+  (`fraud_dashboard`) linking the marts to the Power BI report for end-to-end lineage - both adopted
+  after benchmarking the layout against dbt's own structure guidance.
+- `dbt build` green (114 checks); the **second incremental run** produced no duplicates (idempotency
+  proven); `dbt docs generate` writes the catalog with the exposure in the lineage graph.
+
+### 2026-07-19 - Gold discovery: fraud signals + the Power BI serving model
+**Added**
+- `analyses/gold_fraud_signal_scan.sql` and `analyses/gold_dashboard_metrics.sql` - dbt analyses that,
+  on the **real data**, raise the Gold fraud signals with their value at risk and verify the KPI of each
+  dashboard panel computes.
+
+**Decided**
+- **Fraud signals + risk score** ([ADR-0013](decisions/0013-gold-fraud-signals-risk-score.md)): five
+  **core** signals (affiliate ghost-FTD, AML low-play, IP velocity, ledger anomaly, net-negative) combined
+  into a per-player **risk score**, with `value_at_risk`. The high-confidence set (score >= 2) is 362
+  players, R$826k at risk. Five **secondary** signals cover the rest of the catalog (structuring, geo
+  conflict, device takeover, registration velocity, dormant reactivation) as logic-ready flags, out of the
+  score. Materialized in `fct_fraud_signals` (R2).
+- **Power BI serving** ([ADR-0014](decisions/0014-gold-serving-model-for-power-bi.md)): a star schema in
+  **Import mode** - conformed `dim_player`/`dim_affiliate`/`dim_date`, facts (`fct_transactions` carrying
+  the ledger balance, `fct_sessions`), and the marts (`fct_fraud_signals`, `agg_affiliate_performance`)
+  mapped to the three panels.
+
 ### 2026-07-17 - Silver intermediate models (dbt) + tests
 **Added**
 - Seven Silver **`int_` models** (`dbt/models/intermediate/`, materialized as tables): `int_players_conformed`

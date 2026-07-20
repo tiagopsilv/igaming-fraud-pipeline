@@ -1,5 +1,5 @@
 # ==============================================================================
-# explore_star_schema.py - Detective work for the Gold star schema (A3 Medallion):
+# explore_star_schema.py - Discovery for the Gold star schema (A3 Medallion):
 # which entities become dimensions vs facts, each fact's grain and measure, the
 # BigQuery physical design (partition + cluster), and materialization by size.
 # Fully offline. Run:  python exploration/explore_star_schema.py

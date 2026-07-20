@@ -1,5 +1,5 @@
 # ==============================================================================
-# explore_load_strategy.py - Detective work for the LOAD STRATEGY (E4): for each
+# explore_load_strategy.py - Discovery for the LOAD STRATEGY (E4): for each
 # source, does the data support incremental loading? We look for a watermark (a
 # timestamp to filter new rows), a unique key (for an idempotent merge), and a
 # change-tracking column (updated_at). That decides full vs incremental. Offline.

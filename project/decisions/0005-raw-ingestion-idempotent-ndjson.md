@@ -2,7 +2,7 @@
 
 - **Status:** Accepted
 - **Date:** 2026-07-17
-- **Evidence:** `exploration/explore_ingestion.py` - a dedicated detective pass over what the load
+- **Evidence:** `exploration/explore_ingestion.py` - a dedicated discovery pass over what the load
   must handle. It finds: the JSON files are pretty-printed **arrays** (need NDJSON); the sources are
   **CRLF** (so the loader must write LF); the JSON is **flat with a single schema** and the CSVs have
   **no ragged rows or embedded newlines** (a clean autodetect load); all column names are **valid**
