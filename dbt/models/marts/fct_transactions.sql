@@ -26,7 +26,7 @@ select
     transaction_id,
     player_id,
     txn_ts,
-    date(txn_ts)       as txn_date,
+    date(txn_ts) as txn_date,
     transaction_type,
     amount,
     signed_amount,
@@ -34,5 +34,5 @@ select
 from {{ ref('int_player_ledger') }}
 
 {% if is_incremental() %}
-where txn_ts >= timestamp_sub((select max(txn_ts) from {{ this }}), interval 3 day)
+    where txn_ts >= timestamp_sub((select max(txn_ts) from {{ this }}), interval 3 day)
 {% endif %}

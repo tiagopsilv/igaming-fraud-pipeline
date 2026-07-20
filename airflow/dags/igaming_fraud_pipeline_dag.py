@@ -1,5 +1,5 @@
 """
-igaming_fraud_pipeline - the orchestration DAG (deliverable E2).
+igaming_fraud_pipeline - the orchestration DAG.
 
 Flow: ingest raw -> source freshness -> dbt build (models + tests) -> done.
 The dbt run is rendered by Astronomer Cosmos as a DbtTaskGroup, so every model and test
@@ -142,7 +142,7 @@ with DAG(
         append_env=True,
     )
 
-    # 2) Source freshness: fail fast if the just-landed data is stale (observability point, R1).
+    # 2) Source freshness: fail fast if the just-landed data is stale (observability point).
     source_freshness = BashOperator(
         task_id="dbt_source_freshness",
         bash_command=(

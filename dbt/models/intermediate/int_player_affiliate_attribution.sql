@@ -15,7 +15,7 @@ claims as (
         country,
         cpa_value,
         row_number() over (
-            partition by player_id order by cpa_value desc, affiliate_id
+            partition by player_id order by cpa_value desc, affiliate_id asc
         ) as pick
     from {{ ref('stg_affiliate_cpa_ftd') }}
     where ftd > 0
@@ -26,6 +26,6 @@ select
     c.affiliate_id,
     c.country as acquisition_country,   -- of the attributed row (not an affiliate attribute)
     c.cpa_value
-from claims c
-join qualified q using (player_id)      -- gate: only qualified FTDs earn CPA (ADR-0011)
+from claims as c
+inner join qualified using (player_id)      -- gate: only qualified FTDs earn CPA (ADR-0011)
 where c.pick = 1

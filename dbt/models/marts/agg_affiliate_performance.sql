@@ -9,25 +9,42 @@
 --   ghost_ftds     - FTDs the affiliate CLAIMED but that never qualified (the acquisition-fraud
 --                    signal): CPA asked for on air.
 with attributed as (
-    select player_id, affiliate_id, cpa_value
+    select
+        player_id,
+        affiliate_id,
+        cpa_value
     from {{ ref('int_player_affiliate_attribution') }}
 ),
-fin as (select player_id, net_deposit from {{ ref('int_player_financials') }}),
-qualified as (select player_id from {{ ref('int_player_qualified_ftd') }} where is_qualified),
+
+fin as (
+    select
+        player_id,
+        net_deposit
+    from {{ ref('int_player_financials') }}
+),
+
+qualified as (
+    select player_id from {{ ref('int_player_qualified_ftd') }}
+    where is_qualified
+),
+
 ghost as (
-    select affiliate_id, count(distinct player_id) as ghost_ftds
+    select
+        affiliate_id,
+        count(distinct player_id) as ghost_ftds
     from {{ ref('stg_affiliate_cpa_ftd') }}
     where ftd > 0 and player_id not in (select player_id from qualified)
     group by affiliate_id
 ),
+
 perf as (
     select
         a.affiliate_id,
-        count(distinct a.player_id)   as qualified_ftds,
-        sum(a.cpa_value)              as cpa_owed,
-        sum(f.net_deposit)            as real_revenue
-    from attributed a
-    left join fin f using (player_id)
+        count(distinct a.player_id) as qualified_ftds,
+        sum(a.cpa_value) as cpa_owed,
+        sum(f.net_deposit) as real_revenue
+    from attributed as a
+    left join fin as f using (player_id)
     group by a.affiliate_id
 )
 
@@ -37,6 +54,6 @@ select
     p.cpa_owed,
     p.real_revenue,
     safe_divide(p.real_revenue, p.cpa_owed) as roi,
-    coalesce(g.ghost_ftds, 0)               as ghost_ftds
-from perf p
-left join ghost g using (affiliate_id)
+    coalesce(g.ghost_ftds, 0) as ghost_ftds
+from perf as p
+left join ghost as g using (affiliate_id)

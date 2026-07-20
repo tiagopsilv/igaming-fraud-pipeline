@@ -1,4 +1,4 @@
-# Airflow orchestration (Astro + Cosmos) - deliverable E2
+# Airflow orchestration (Astro + Cosmos)
 
 The DAG that orchestrates the pipeline: **ingest -> source freshness -> dbt build (models + tests)**.
 The dbt run is rendered by **Astronomer Cosmos** as a `DbtTaskGroup`, so every model and test is its

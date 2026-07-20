@@ -6,10 +6,10 @@ version: 2
 # the code.) Run in dev/CI with `dbt build` or `dbt test --select test_type:unit`.
 
 unit_tests:
-  # Glossary "FTD Qualificado": a player qualifies only if they deposited AND bet >= the baseline (50).
+  # Qualified FTD (glossary): a player qualifies only if they deposited AND bet >= the baseline (50).
   - name: ut_qualified_ftd_respects_baseline
     model: int_player_qualified_ftd
-    description: "A bet at/above the baseline qualifies; below it does not (glossary FTD Qualificado)."
+    description: "A bet at/above the baseline qualifies; below it does not (qualified-FTD rule)."
     given:
       - input: ref('int_player_first_deposit')
         rows:

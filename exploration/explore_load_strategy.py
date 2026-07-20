@@ -1,5 +1,5 @@
 # ==============================================================================
-# explore_load_strategy.py - Discovery for the LOAD STRATEGY (E4): for each
+# explore_load_strategy.py - Discovery for the LOAD STRATEGY: for each
 # source, does the data support incremental loading? We look for a watermark (a
 # timestamp to filter new rows), a unique key (for an idempotent merge), and a
 # change-tracking column (updated_at). That decides full vs incremental. Offline.
@@ -49,8 +49,8 @@ print("transactions -> INCREMENTAL merge on transaction_id: money -> a rerun mus
 print("players      -> FULL refresh: small dim; no updated_at to drive incremental (SCD-2 in production).")
 print("affiliate    -> FULL refresh: small; no date column for a watermark (a restated report).")
 
-# --- Conclusion: the E4 load-strategy table (evidence for ADR-0008) -----------
-banner("Conclusion - load strategy per source (the E4 table)")
+# --- Conclusion: the load-strategy table (evidence for ADR-0008) -----------
+banner("Conclusion - load strategy per source (the load-strategy table)")
 print(f"{'source':<13}{'frequency':<16}{'load':<14}{'control field':<30}justification")
 print(f"{'players':<13}{'daily':<16}{'full':<14}{'-':<30}small dim, no updated_at")
 print(f"{'sessions':<13}{'hourly/near-RT':<16}{'incremental':<14}{'timestamp':<30}high-volume append event")

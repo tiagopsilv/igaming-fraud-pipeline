@@ -25,5 +25,5 @@ select
 from {{ ref('stg_sessions') }}
 
 {% if is_incremental() %}
-where date(session_ts) >= date_sub((select max(session_date) from {{ this }}), interval 3 day)
+    where date(session_ts) >= date_sub((select max(session_date) from {{ this }}), interval 3 day)
 {% endif %}

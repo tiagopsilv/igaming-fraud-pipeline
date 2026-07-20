@@ -1,7 +1,10 @@
 -- Gold ledger integrity: the stored running_balance in fct_transactions must equal the balance
 -- recomputed from the signed amounts in time order. Any drift means the fact and the ledger logic
 -- disagree - a real bug. Expect 0 rows.
-select transaction_id, running_balance, recomputed
+select
+    transaction_id,
+    running_balance,
+    recomputed
 from (
     select
         transaction_id,

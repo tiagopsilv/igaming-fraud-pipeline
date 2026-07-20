@@ -4,5 +4,6 @@ select
     transaction_id,
     amount
 from {{ ref('stg_transactions') }}
-where amount is not null
-  and amount <= 0
+where
+    amount is not null
+    and amount <= 0

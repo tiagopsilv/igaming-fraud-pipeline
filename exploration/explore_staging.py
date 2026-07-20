@@ -58,13 +58,13 @@ TARGET = {
     "amount": "NUMERIC",        # was FLOAT -> money must be NUMERIC (ADR-0006)
     "cpa_value": "NUMERIC",     # was INTEGER -> money must be NUMERIC
     "clicks": "INT64", "registrations": "INT64", "ftd": "INT64",
-    "created_at": "DATE",       # already DATE (safe_cast is a robust no-op)
-    "timestamp": "TIMESTAMP",   # already TIMESTAMP (safe_cast robust)
+    "created_at": "DATE",       # already DATE (safe_cast is a safe no-op)
+    "timestamp": "TIMESTAMP",   # already TIMESTAMP (safe_cast safe)
 }
 for t in TABLES:
     fixes = {c: TARGET[c] for c in schema[t] if c in TARGET}
     print(f"{t:<18} cast: {fixes}")
-print("-> safe_cast EVERY typed column: robust to autodetect drift AND fixes money (FLOAT/INT -> NUMERIC).")
+print("-> safe_cast EVERY typed column: resilient to autodetect drift AND fixes money (FLOAT/INT -> NUMERIC).")
 print("   safe_cast(x as timestamp) works whether autodetect gave TIMESTAMP (no-op) or a STRING (parses).")
 
 # --- Q3: rename + the layer boundary -----------------------------------------
@@ -120,7 +120,7 @@ banner("Conclusion - the Bronze staging contract, per source")
 print("- Autodetect TYPED the raw (measured, not assumed): timestamps->TIMESTAMP, created_at->DATE,")
 print("  counts->INTEGER, and amount->FLOAT (a money field! the trap staging must fix).")
 print("- stg_ safe_casts every typed column: amount/cpa_value->NUMERIC (never FLOAT), *ts->TIMESTAMP,")
-print("  counts->INT64, created_at->DATE. safe_cast is robust to autodetect drift across batches.")
+print("  counts->INT64, created_at->DATE. safe_cast is resilient to autodetect drift across batches.")
 print("- rename: type->transaction_type, timestamp->txn_ts/session_ts; the rest already snake_case.")
 print("- staging does rename + cast + audit passthrough ONLY; business rules live in Silver.")
 print("- Bronze tests (structural, all pass here = guards): unique/not_null, accepted_values, amount>0,")

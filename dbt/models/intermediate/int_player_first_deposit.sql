@@ -7,8 +7,8 @@ with tx as (
 
 select
     player_id,
-    min(txn_ts)  as first_deposit_ts,
-    count(*)     as deposit_count,
-    sum(amount)  as total_deposits
+    min(txn_ts) as first_deposit_ts,
+    count(*) as deposit_count,
+    sum(amount) as total_deposits
 from tx
 group by player_id

@@ -13,7 +13,7 @@
 -- conflict, device takeover, registration velocity, dormant reactivation) - each computable
 -- here, kept as logic-ready flags but OUT of the score, because on this data they are thin.
 --
--- HONEST NOTE: the sample is synthetic/random, so any hit is coincidental. This is
+-- Note: the sample is synthetic/random, so any hit is coincidental. This is
 -- production-ready logic and an honest count, never "fraud found".
 -- Run:  dbt show -s gold_fraud_signal_scan --limit 30
 -- ============================================================================

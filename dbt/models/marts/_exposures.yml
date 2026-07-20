@@ -1,7 +1,7 @@
 version: 2
 
-# Exposures declare where the Gold marts are ultimately consumed - the Power BI dashboard
-# (deliverable E5). They give end-to-end lineage (source -> Bronze -> Silver -> Gold ->
+# Exposures declare where the Gold marts are ultimately consumed - the Power BI dashboard.
+# They give end-to-end lineage (source -> Bronze -> Silver -> Gold ->
 # dashboard) in `dbt docs`, and impact analysis: `dbt build -s +exposure:fraud_dashboard`
 # rebuilds exactly what the dashboard depends on.
 
